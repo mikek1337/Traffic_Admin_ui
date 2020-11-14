@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
 import { SmartTableData } from '../../../@core/data/smart-table';
+import { MultiselectComponent } from '../multiselect/multiselect.component';
 
 @Component({
   selector: 'ngx-smart-table',
@@ -38,17 +39,33 @@ export class SmartTableComponent {
         title: 'Last Name',
         type: 'string',
       },
+      PartyType:
+      {
+        title:'Party Type',
+        type:'string'
+      },
+      subcity:
+      {
+        title:"Subcity",
+        type:'string'
+      },
+      address:
+      {
+        title:"Address",
+        type:'string'
+      },
       username: {
         title: 'Username',
-        type: 'string',
-      },
-      email: {
-        title: 'E-mail',
-        type: 'string',
-      },
-      age: {
-        title: 'Age',
         type: 'number',
+      },
+      password:
+      {
+        title:'Password',
+        type:'string'
+      },
+      working:{
+        title: 'Working Station',
+        type:'string'
       },
     },
   };

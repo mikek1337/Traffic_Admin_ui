@@ -5,9 +5,11 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ThemeModule } from '../../@theme/theme.module';
 import { TablesRoutingModule, routedComponents } from './tables-routing.module';
 import { FsIconComponent } from './tree-grid/tree-grid.component';
-
+import { MultiselectComponent } from './multiselect/multiselect.component';
+import{FormsModule} from '@angular/forms';
 @NgModule({
   imports: [
+    FormsModule,
     NbCardModule,
     NbTreeGridModule,
     NbIconModule,
@@ -19,6 +21,7 @@ import { FsIconComponent } from './tree-grid/tree-grid.component';
   declarations: [
     ...routedComponents,
     FsIconComponent,
+    MultiselectComponent,
   ],
 })
 export class TablesModule { }

@@ -8,9 +8,27 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'IoT Dashboard',
-    icon: 'home-outline',
-    link: '/pages/iot-dashboard',
+    title: 'Manage Traffic Police',
+    icon: 'shopping-cart-outline',
+    children:[
+      {
+        title:'Add Traffic Police',
+        link:'/pages/Admin/Add-Traffic'
+      },
+      {
+        title:'View Users',
+        link:'/pages/Admin/View-User'
+      }
+    ]
+  },
+  {
+    title:'Manage Resources',
+    icon: 'shopping-cart-outline',
+    children:[
+      {
+        title:'Assign Traffic Police'
+      }
+    ]
   },
   {
     title: 'FEATURES',

@@ -7,7 +7,7 @@ import { of as observableOf } from 'rxjs';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import {
   AnalyticsService,
-  LayoutService,
+  LayoutService, 
   PlayerService,
   SeoService,
   StateService,

@@ -2,9 +2,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { NbAuthComponent } from '@nebular/auth/components/auth.component';
+import { NbLoginComponent } from '@nebular/auth';
+//import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [{
   path: '',
@@ -15,8 +17,8 @@ const routes: Routes = [{
       component: ECommerceComponent,
     },
     {
-      path: 'iot-dashboard',
-      component: DashboardComponent,
+      path:'Admin',
+      loadChildren: () => import("./admin/admin.module").then(m => m.AdminModule),
     },
     {
       path: 'layout',
