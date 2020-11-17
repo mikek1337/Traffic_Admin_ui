@@ -1,0 +1,35 @@
+<nb-card>
+  <nb-card-header>
+    Incident Table
+  </nb-card-header>
+  <nb-card-body>
+<form>
+  <div class="form-group form-inline">
+      Full text search: <input class="form-control ml-2" type="text" />
+  </div>
+</form>
+
+<table class="table table-striped">
+  <thead>
+  <tr >
+    <th class="bg-dark text-light"  *ngFor='let col of displayedColumns' scope="col">{{col}}</th>   
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor='let element of incidents'>
+    <td>
+      {{element.incidentId}}
+    </td>
+    <td>{{element.incidentDate.replace("T"," ")}}</td>
+    <td>{{element.initialReportedTime.replace("T"," ")}}</td>
+    <td>{{element.incidentAddress}}</td>
+    <td>{{element.incidentSubcity}}</td>
+    <td>{{element.noOfCommuterInvolve}}</td>
+    <td>{{element.incidentContributingCause}}</td>
+    <td>{{element.roadAlignment}}</td>
+    <td>{{element.roadGeometryType}}</td>
+  </tr>
+  </tbody>
+</table>
+</nb-card-body>
+</nb-card>

@@ -15,12 +15,14 @@ import {
   NbSelectModule,
   NbUserModule,
   
-} from '@nebular/theme';
+} from '@nebular/theme'
+//import {NgbHighlight} from '@ng-bootstrap/ng-bootstrap'
 import { ViewUserComponent } from './view-user/view-user.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-
+import {CdkTableModule} from '@angular/cdk/table';
+import { ViewRecordsComponent } from './view-records/view-records.component'
 @NgModule({
-  declarations: [AdminComponent, AddTrafficComponent, ViewUserComponent],
+  declarations: [AdminComponent, AddTrafficComponent, ViewUserComponent, ViewRecordsComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -35,7 +37,9 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     NbRadioModule,
     NbSelectModule,
     NbUserModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    CdkTableModule,
+    
   ]
 })
 export class AdminModule { }

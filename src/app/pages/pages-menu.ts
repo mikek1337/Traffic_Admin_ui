@@ -31,6 +31,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ]
   },
   {
+    title:'Records',
+    children:[
+      {
+        title:'View Records',
+        link:'/pages/Admin/view-records'
+      }
+    ]
+  },
+  {
     title: 'FEATURES',
     group: true,
   },

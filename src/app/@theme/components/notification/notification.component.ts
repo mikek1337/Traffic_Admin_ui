@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InformIncident } from 'app/@core/models/incident';
+import { HttpService } from 'app/@core/service/http.service';
 
 @Component({
   selector: 'ngx-notification',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private httpservice:HttpService) { }
+incidents:InformIncident;
+date:any;
+getdate = new Date();
+time:any;
+incidenttype:any;
   ngOnInit(): void {
+    this.httpservice.getinformedincidents().subscribe(res=>{
+      this.incidents=res;
+      this.date = this.getdate.toLocaleTimeString();
+    })
   }
 
 }

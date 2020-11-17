@@ -20,7 +20,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userPictureOnly: boolean = false;
   user: any;
   username:string;
-  notify: NotificationComponent;
+  notify = NotificationComponent;
+  position="bottom"
   men:{title:null}
   themes = [
     {

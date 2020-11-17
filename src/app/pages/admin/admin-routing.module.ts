@@ -5,6 +5,7 @@ import { Route } from '@angular/compiler/src/core';
 import { AdminComponent } from './admin.component';
 import { AddTrafficComponent } from './add-traffic/add-traffic.component';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { ViewRecordsComponent } from './view-records/view-records.component';
 
 const routes: Routes = [{
   path:'',
@@ -17,6 +18,10 @@ const routes: Routes = [{
     {
       path:'View-User',
       component:ViewUserComponent
+    },
+    {
+      path:'view-records',
+      component:ViewRecordsComponent
     }
   ]
 

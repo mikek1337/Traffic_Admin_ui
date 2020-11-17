@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User, Userinfo } from 'app/@core/models/userlogin';
-import { Enums } from '../models/incident';
+import { Enums, incident, InformIncident } from '../models/incident';
 import { Party, PartyType } from '../models/party';
 
 
@@ -37,9 +37,14 @@ export class HttpService {
   {
     return this.http.get<Party>(this.url+"/Admin/user");
   }
-  getincidents()
+  getinformedincidents()
   {
-    return this.http.get(this.url+"/Admin/getincident");
+    return this.http.get<InformIncident>(this.url+"/Admin/getincident");
   }
+  getincident()
+  {
+    return this.http.get<incident>(this.url+"/Admin/getregisteredincident")
+  }
+
 
 }
