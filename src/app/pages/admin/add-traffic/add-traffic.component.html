@@ -13,14 +13,6 @@
             <input type="number" [(ngModel)]="phoneno" nbInput fullWidth placeholder="ስልክ ቁጥር (+251)">
           </div>
           <nb-card>
-            <nb-card-header>Working Station</nb-card-header>
-            <nb-card-body>
-              <nb-select [(ngModel)]="working" fullWidth selected="ARADA">
-                <nb-option *ngFor="let enum of enums" [value]="enum.enumId">{{enum.description}}</nb-option>
-              </nb-select>
-            </nb-card-body>
-          </nb-card>
-          <nb-card>
               <nb-card-header>Party Type</nb-card-header>
               <nb-card-body>
               <nb-select [(ngModel)]="party" selected="TRAFFIC_POLICE" fullWidth >
