@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { AddTrafficComponent } from './add-traffic/add-traffic.component';
 import {
   NbActionsModule,
@@ -14,7 +15,7 @@ import {
   NbRadioModule,
   NbSelectModule,
   NbUserModule,
-  
+  NbStepperModule,
   
 } from '@nebular/theme'
 //import {NgbHighlight} from '@ng-bootstrap/ng-bootstrap'
@@ -23,8 +24,11 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import {CdkTableModule} from '@angular/cdk/table';
 import { ViewRecordsComponent } from './view-records/view-records.component';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+import { AssignTrafficComponent } from './assign-traffic/assign-traffic.component';
+import { ViewIncidentsComponent } from './view-incidents/view-incidents.component';
+
 @NgModule({
-  declarations: [AdminComponent, AddTrafficComponent, ViewUserComponent, ViewRecordsComponent],
+  declarations: [AdminComponent, AddTrafficComponent, ViewUserComponent, ViewRecordsComponent, AssignTrafficComponent, ViewIncidentsComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -41,7 +45,9 @@ import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
     NbUserModule,
     Ng2SmartTableModule,
     CdkTableModule,
+    NbStepperModule,
     //NgbPaginationModule
+    LeafletModule
     
   ]
 })

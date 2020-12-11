@@ -1,0 +1,38 @@
+<nb-card class="col-md-12 col-lg-12 col-xxxl-12">
+  <nb-card-body>
+    <nb-stepper orientation="horizontal">
+      <nb-step [label]="labelOne">
+        <ng-template #labelOne>First step</ng-template>
+        <div class="row" *ngFor="let incident of incidents">
+          <div class="col-6">
+            <img src="data:image/png;base64,{{incident.img}}" height="300px" width="300px" alt=" ">
+          </div>
+          <div class="col-6">
+            <ul type="none" class="detail">
+              <li>Party ID: {{incident.partyId}}</li>
+              <li>Incident Type: {{incident.incidetType.replace("_"," ")}}</li>
+              <li>Incident Location: {{incident.locatioDetail}}</li>
+              <li>Weather Condition: {{incident.weatherCondition}}</li>
+              <li>Vehicles involved: {{incident.noOfVehicleInvolve}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <button nbButton disabled nbStepperNext class="btn1">prev</button>
+        <button nbButton nbStepperNext class="btn2">Approve</button>
+      </nb-step>
+      <nb-step [label]="labelTwo">
+        <ng-template #labelTwo>Final step</ng-template>
+        <nb-card>
+          <nb-card-header>leaflet</nb-card-header>
+          <nb-card-body>
+            <div leaflet [leafletOptions]="options" class="leaflet" (leafletMapReady)="onmapready($event)"></div>
+          </nb-card-body>
+        </nb-card>
+        <button nbButton nbStepperPrevious class="btn3">prev</button>
+        <button nbButton nbStepperNext class="btn4" (click)="assign()">Assign</button>
+       
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>

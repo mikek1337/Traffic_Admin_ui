@@ -1,0 +1,6 @@
+<div *ngFor="let incident of incidents">
+    <nb-card [routerLink]="['../assign',incident.infromIncidentId]" routerLinkActive="active">
+        <nb-card-body>{{incident.incidetType}}</nb-card-body>
+        <nb-card-footer>{{incident.incidentDate}}</nb-card-footer>
+    </nb-card>
+</div>

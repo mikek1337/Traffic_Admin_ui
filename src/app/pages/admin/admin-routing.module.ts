@@ -6,6 +6,9 @@ import { AdminComponent } from './admin.component';
 import { AddTrafficComponent } from './add-traffic/add-traffic.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { ViewRecordsComponent } from './view-records/view-records.component';
+import { AssignTrafficComponent } from './assign-traffic/assign-traffic.component';
+import { ViewIncidentsComponent } from './view-incidents/view-incidents.component';
+
 
 const routes: Routes = [{
   path:'',
@@ -22,7 +25,15 @@ const routes: Routes = [{
     {
       path:'view-records',
       component:ViewRecordsComponent
-    }
+    },
+    {
+      path:"assign/:id",
+      component:AssignTrafficComponent
+    },
+    {
+      path:"assign",
+      component:ViewIncidentsComponent
+    },
   ]
 
 }]

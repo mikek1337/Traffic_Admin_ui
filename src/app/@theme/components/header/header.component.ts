@@ -8,6 +8,8 @@ import { Subject } from 'rxjs';
 import { HttpService } from 'app/@core/service/http.service';
 import { StorageService } from 'app/@core/service/storage.service';
 import { NotificationComponent } from '../notification/notification.component';
+import { count } from 'console';
+import { InformIncident } from 'app/@core/models/incident';
 
 @Component({
   selector: 'ngx-header',
@@ -19,6 +21,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
   user: any;
+  count:any;
   username:string;
   notify = NotificationComponent;
   position="bottom"
@@ -59,7 +62,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.currentTheme = this.themeService.currentTheme;
 
       this.username=this.storage.getLocalStorage("username");
-
+      this.httpservice.getinformedincidents().subscribe(res=> {this.count=Object.keys(res).length; 
+      console.log(this.count)} )
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
       .pipe(
@@ -81,6 +85,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  viewed(){
+    this.count = 0;
   }
 
   changeTheme(themeName: string) {

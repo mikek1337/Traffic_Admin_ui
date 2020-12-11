@@ -6,7 +6,7 @@ export class Enums
 }
 export class InformIncident
 {
-    informIncidentId:any;
+    infromIncidentId:any;
     incidetType:string;
     incidentDate:string;
     injury:boolean;

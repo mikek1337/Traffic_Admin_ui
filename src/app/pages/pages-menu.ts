@@ -6,6 +6,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'shopping-cart-outline',
     link: '/pages/dashboard',
     home: true,
+    hidden: true
   },
   {
     title: 'Manage Traffic Police',
@@ -13,7 +14,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children:[
       {
         title:'Add Traffic Police',
-        link:'/pages/Admin/Add-Traffic'
+        link:'/pages/Admin/Add-Traffic',
       },
       {
         title:'View Users',
@@ -24,9 +25,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title:'Manage Resources',
     icon: 'shopping-cart-outline',
+    
     children:[
       {
-        title:'Assign Traffic Police'
+        title:'Assign Traffic Police',
+        link:'/pages/Admin/assign'
       }
     ]
   },
@@ -42,37 +45,45 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'FEATURES',
     group: true,
+    hidden: true
   },
   {
     title: 'Layout',
     icon: 'layout-outline',
+    hidden: true,
     children: [
       {
         title: 'Stepper',
         link: '/pages/layout/stepper',
+        hidden: true
       },
       {
         title: 'List',
         link: '/pages/layout/list',
+        hidden: true
       },
       {
         title: 'Infinite List',
         link: '/pages/layout/infinite-list',
+        hidden: true
       },
       {
         title: 'Accordion',
         link: '/pages/layout/accordion',
+        hidden: true
       },
       {
         title: 'Tabs',
         pathMatch: 'prefix',
         link: '/pages/layout/tabs',
+        hidden: true
       },
     ],
   },
   {
     title: 'Forms',
     icon: 'edit-2-outline',
+    hidden: true,
     children: [
       {
         title: 'Form Inputs',
@@ -96,6 +107,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'UI Features',
     icon: 'keypad-outline',
     link: '/pages/ui-features',
+    hidden: true,
     children: [
       {
         title: 'Grid',
@@ -118,6 +130,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Modal & Overlays',
     icon: 'browser-outline',
+    hidden: true,
     children: [
       {
         title: 'Dialog',
@@ -144,6 +157,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Extra Components',
     icon: 'message-circle-outline',
+    hidden: true,
     children: [
       {
         title: 'Calendar',
@@ -174,6 +188,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Maps',
     icon: 'map-outline',
+    hidden: true,
     children: [
       {
         title: 'Google Maps',
@@ -196,6 +211,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Charts',
     icon: 'pie-chart-outline',
+    hidden: true,
     children: [
       {
         title: 'Echarts',
@@ -214,6 +230,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Editors',
     icon: 'text-outline',
+    hidden: true,
     children: [
       {
         title: 'TinyMCE',
@@ -228,6 +245,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Tables & Data',
     icon: 'grid-outline',
+    hidden: true,
     children: [
       {
         title: 'Smart Table',
@@ -242,6 +260,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Miscellaneous',
     icon: 'shuffle-2-outline',
+    hidden: true,
     children: [
       {
         title: '404',
@@ -252,6 +271,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Auth',
     icon: 'lock-outline',
+    hidden: true,
     children: [
       {
         title: 'Login',

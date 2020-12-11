@@ -1,0 +1,45 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  nb-card-body {
+    padding: 0;
+  }
+
+  ::ng-deep .leaflet-top, ::ng-deep .leaflet-bottom {
+    z-index: 997;
+  }
+
+  ::ng-deep .leaflet-container {
+    width: 100%;
+    height: nb-theme(card-height-large);
+  }
+}
+.leaflet
+{
+  height: 50%;
+}
+button
+{
+    margin-top: 30px;
+    margin-left: 500px;
+    color: aqua;
+}
+.btn1
+{
+    margin-left: 50px;
+}
+
+.btn3
+{
+    margin-left: 50px;
+}
+.btn2
+{
+    margin-right: 50px;
+}
+
+.btn4
+{
+    margin-right: 50px;
+}

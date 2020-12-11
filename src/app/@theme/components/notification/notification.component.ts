@@ -18,6 +18,7 @@ incidenttype:any;
   ngOnInit(): void {
     this.httpservice.getinformedincidents().subscribe(res=>{
       this.incidents=res;
+     console.log(this.incidents[0].infromIncidentId);
       this.date = this.getdate.toLocaleTimeString();
     })
   }

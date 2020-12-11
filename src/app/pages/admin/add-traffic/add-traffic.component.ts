@@ -3,6 +3,7 @@ import { Enums } from 'app/@core/models/incident';
 import { PartyType } from 'app/@core/models/party';
 import { User, Userinfo } from 'app/@core/models/userlogin';
 import { HttpService } from 'app/@core/service/http.service';
+import { UiService } from 'app/@core/service/ui.service';
 
 @Component({
   selector: 'ngx-add-traffic',
@@ -25,7 +26,7 @@ wereda:string;
 username:string;
 password:string;
 address:string;
-  constructor(private httpservice:HttpService) { }
+  constructor(private httpservice:HttpService,private toastrService:UiService) { }
 
   ngOnInit(): void {
     this.httpservice.GetPartyType().subscribe(response=>{
@@ -50,7 +51,10 @@ address:string;
     this.user.username=this.username;
     this.user.password= this.password;
     this.httpservice.registerTraffic(this.user).subscribe(res=>{
-      console.log(res);
+     if(res!=null)
+     {
+      this.toastrService.showToast("success",this.party.replace("_"," "),"Successfully Added");
+     }
       
     })
 
