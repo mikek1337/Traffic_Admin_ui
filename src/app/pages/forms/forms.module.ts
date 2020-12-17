@@ -19,6 +19,9 @@ import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { FormsModule as ngFormsModule } from '@angular/forms';
+import { IncidentCaseComponent } from './incident-case/incident-case.component';
+import { IncidentFormComponent } from './incident-form/incident-form.component';
+import { DriversComponent } from './drivers/drivers.component';
 
 @NgModule({
   imports: [
@@ -42,6 +45,9 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
     FormInputsComponent,
     FormLayoutsComponent,
     DatepickerComponent,
+    IncidentCaseComponent,
+    IncidentFormComponent,
+    DriversComponent,
   ],
 })
 export class FormsModule { }

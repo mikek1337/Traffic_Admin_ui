@@ -6,38 +6,42 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'shopping-cart-outline',
     link: '/pages/dashboard',
     home: true,
-    hidden: true
+    hidden:true
   },
   {
-    title: 'Manage Traffic Police',
+    title: 'FEATURES',
+    group: true,
+  },
+  {
+    title: 'ትራፊክ ፖሊሶችን ይቆጣጠሩ ',
     icon: 'shopping-cart-outline',
+
     children:[
       {
-        title:'Add Traffic Police',
-        link:'/pages/Admin/Add-Traffic',
+        title:'ትራፊክ ፖሊስ አስገባ',
+        link:'/pages/Admin/Add-Traffic'
       },
       {
-        title:'View Users',
+        title:'ሲስተም ውስጥ ያሉትን ተጠቃሚዎች ይመልከቱ',
         link:'/pages/Admin/View-User'
       }
     ]
   },
   {
-    title:'Manage Resources',
+    title:'የትራፊክ አደጋውን ',
     icon: 'shopping-cart-outline',
-    
     children:[
       {
-        title:'Assign Traffic Police',
+        title:'ትራፊክ ፖሊስ መድብ',
         link:'/pages/Admin/assign'
       }
     ]
   },
   {
-    title:'Records',
+    title:'መዝገብ',
     children:[
       {
-        title:'View Records',
+        title:'የገቡ መዝገቦችን ተመልከት',
         link:'/pages/Admin/view-records'
       }
     ]
@@ -45,61 +49,55 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'FEATURES',
     group: true,
-    hidden: true
   },
   {
     title: 'Layout',
     icon: 'layout-outline',
-    hidden: true,
     children: [
       {
         title: 'Stepper',
         link: '/pages/layout/stepper',
-        hidden: true
       },
       {
         title: 'List',
         link: '/pages/layout/list',
-        hidden: true
       },
       {
         title: 'Infinite List',
         link: '/pages/layout/infinite-list',
-        hidden: true
       },
       {
         title: 'Accordion',
         link: '/pages/layout/accordion',
-        hidden: true
       },
       {
         title: 'Tabs',
         pathMatch: 'prefix',
         link: '/pages/layout/tabs',
-        hidden: true
       },
     ],
+    hidden:true
   },
   {
-    title: 'Forms',
+    title: 'የአደጋ ቅጽ ሙላ',
     icon: 'edit-2-outline',
-    hidden: true,
     children: [
       {
-        title: 'Form Inputs',
+        title: 'ቀላል አደጋ',
         link: '/pages/forms/inputs',
       },
       {
-        title: 'Form Layouts',
+        title: 'መካከለኛ አደጋ',
         link: '/pages/forms/layouts',
       },
       {
-        title: 'Buttons',
+        title: 'ከባድ አደጋ',
         link: '/pages/forms/buttons',
       },
       {
         title: 'Datepicker',
         link: '/pages/forms/datepicker',
+        hidden:true
       },
     ],
   },
@@ -107,7 +105,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'UI Features',
     icon: 'keypad-outline',
     link: '/pages/ui-features',
-    hidden: true,
     children: [
       {
         title: 'Grid',
@@ -126,11 +123,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/ui-features/search-fields',
       },
     ],
+    hidden:true
   },
   {
     title: 'Modal & Overlays',
     icon: 'browser-outline',
-    hidden: true,
     children: [
       {
         title: 'Dialog',
@@ -153,11 +150,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/modal-overlays/tooltip',
       },
     ],
+    hidden:true
   },
   {
     title: 'Extra Components',
     icon: 'message-circle-outline',
-    hidden: true,
     children: [
       {
         title: 'Calendar',
@@ -184,11 +181,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/extra-components/chat',
       },
     ],
+    hidden:true
   },
   {
     title: 'Maps',
     icon: 'map-outline',
-    hidden: true,
     children: [
       {
         title: 'Google Maps',
@@ -207,11 +204,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/maps/searchmap',
       },
     ],
+    hidden:true
   },
   {
     title: 'Charts',
     icon: 'pie-chart-outline',
-    hidden: true,
     children: [
       {
         title: 'Echarts',
@@ -226,11 +223,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/charts/d3',
       },
     ],
+    hidden:true
   },
   {
     title: 'Editors',
     icon: 'text-outline',
-    hidden: true,
     children: [
       {
         title: 'TinyMCE',
@@ -241,11 +238,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/editors/ckeditor',
       },
     ],
+    hidden:true
   },
   {
     title: 'Tables & Data',
     icon: 'grid-outline',
-    hidden: true,
     children: [
       {
         title: 'Smart Table',
@@ -256,22 +253,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/tables/tree-grid',
       },
     ],
+    hidden:true
   },
   {
     title: 'Miscellaneous',
     icon: 'shuffle-2-outline',
-    hidden: true,
     children: [
       {
         title: '404',
         link: '/pages/miscellaneous/404',
       },
     ],
+    hidden:true
   },
   {
     title: 'Auth',
     icon: 'lock-outline',
-    hidden: true,
     children: [
       {
         title: 'Login',
@@ -290,5 +287,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/auth/reset-password',
       },
     ],
+    hidden:true
   },
 ];

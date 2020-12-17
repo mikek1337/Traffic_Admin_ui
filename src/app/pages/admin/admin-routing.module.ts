@@ -8,6 +8,7 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { ViewRecordsComponent } from './view-records/view-records.component';
 import { AssignTrafficComponent } from './assign-traffic/assign-traffic.component';
 import { ViewIncidentsComponent } from './view-incidents/view-incidents.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [{
@@ -34,6 +35,10 @@ const routes: Routes = [{
       path:"assign",
       component:ViewIncidentsComponent
     },
+    {
+      path:"profile",
+      component:ProfileComponent
+    }
   ]
 
 }]

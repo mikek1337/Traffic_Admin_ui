@@ -1,13 +1,25 @@
 import { Component } from '@angular/core';
-import { NbComponentShape, NbComponentSize, NbComponentStatus } from '@nebular/theme';
+import { Router } from '@angular/router';
+import { Enums } from 'app/@core/models/incident';
+import { HttpService } from 'app/@core/service/http.service';
 
 @Component({
-  selector: 'ngx-buttons',
+  selector: 'ngx-form-inputs',
   styleUrls: ['./buttons.component.scss'],
   templateUrl: './buttons.component.html',
 })
 export class ButtonsComponent {
-  statuses: NbComponentStatus[] = [ 'primary', 'success', 'info', 'warning', 'danger' ];
-  shapes: NbComponentShape[] = [ 'rectangle', 'semi-round', 'round' ];
-  sizes: NbComponentSize[] = [ 'tiny', 'small', 'medium', 'large', 'giant' ];
+
+  starRate = 2;
+  heartRate = 4;
+  radioGroupValue = 'This is value 2';
+  enums: Enums;
+  constructor(public https:HttpService, public route:Router) { }
+  ngOnInit() {
+    this.https.GetEnums("MAJOR_INCIDET_LEVEL").subscribe(Response=>{
+
+      this.enums = Response
+
+    });
+  }
 }

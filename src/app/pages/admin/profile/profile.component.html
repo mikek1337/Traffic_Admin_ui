@@ -1,0 +1,31 @@
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Full Name</label>
+        <input name="firstname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name" [(ngModel)]="user[0].party.partyName">
+        
+      </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input name="username" type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Username" [(ngModel)]="user[0].username">
+      
+    </div>
+    <div class="form-group">
+      <label for="Password">Password</label>
+      <input name="password" type="password" class="form-control" id="Password" placeholder="Password" [(ngModel)]="user[0].password">
+    </div>
+    <div class="form-group">
+        <label for="Address">Address</label>
+        <input name="address" type="text" id="Address" [(ngModel)]="user[0].party.address" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="phoneno">Phone Number</label>
+        <input name="phoneno" type="text" id="phoneno" [(ngModel)]="user[0].party.phoneNumber" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="subcity">Subcity</label>
+          <select [(ngModel)]="user[0].party.subcity"  name="workingstation" id="working" class="form-control">
+              <option *ngFor="let enum of enums"  [value]="enum.enumId">{{enum.description}}</option>
+          </select>
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="update()">Save Changes</button>
+  </form>

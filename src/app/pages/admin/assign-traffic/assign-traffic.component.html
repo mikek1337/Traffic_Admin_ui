@@ -26,7 +26,7 @@
         <nb-card>
           <nb-card-header>leaflet</nb-card-header>
           <nb-card-body>
-            <div leaflet [leafletOptions]="options" class="leaflet" (leafletMapReady)="onmapready($event)"></div>
+            <div leaflet [leafletOptions]="options" class="leaflet" (leafletMapReady)="onmapready($event)" (load)="map.invalidateSize(true)"></div>
           </nb-card-body>
         </nb-card>
         <button nbButton nbStepperPrevious class="btn3">prev</button>

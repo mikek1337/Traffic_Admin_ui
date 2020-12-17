@@ -33,8 +33,7 @@ export class AssignTrafficComponent implements OnInit {
 
     zoom: 14,
     center: L.latLng({ lat: 8.9806, lng: 38.7578 }),
-
-
+    
   };
 
   index = 1;
@@ -74,7 +73,7 @@ export class AssignTrafficComponent implements OnInit {
 
   onmapready(map: L.Map) {
     this.map = map;
-
+   
     //this.pageData()
     console.log(this.incidents);
     this.activateroute.params.subscribe(p => {

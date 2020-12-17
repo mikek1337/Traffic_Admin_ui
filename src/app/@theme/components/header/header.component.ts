@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { NbDialogService, NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
@@ -10,6 +10,7 @@ import { StorageService } from 'app/@core/service/storage.service';
 import { NotificationComponent } from '../notification/notification.component';
 import { count } from 'console';
 import { InformIncident } from 'app/@core/models/incident';
+import { LogoutComponent } from 'app/auth/logout/logout.component';
 
 @Component({
   selector: 'ngx-header',
@@ -47,7 +48,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [ { title: 'Profile' }, { title: 'Log out' },{shop:'wow'}];
+  userMenu = [ { title: 'Profile',link:"pages/Admin/profile" }];
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
@@ -55,7 +56,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private storage: StorageService,
               private httpservice:HttpService,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private dialogService:NbDialogService ) {
   }
 
   ngOnInit() {
@@ -100,6 +102,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.layoutService.changeLayoutSize();
 
     return false;
+  }
+
+  open()
+  {
+    this.dialogService.open(LogoutComponent)
   }
 
   navigateHome() {

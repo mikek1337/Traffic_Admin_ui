@@ -13,3 +13,25 @@ nb-checkbox {
 nb-card.inline-form-card nb-card-body {
   padding-bottom: 0;
 }
+nb-card{
+  height: 107px;
+  width: 140px;
+
+}
+.row{
+  height: 50%;
+  display: inline-block;
+  margin-right: 184px;
+  margin-left: 15px;
+}
+nb-card-body {
+  overflow: visible;
+  padding-top: 0;
+  display: inline-grid;
+
+
+  img {
+    padding-left: 17px;
+    padding-top: 20px;
+  }
+}

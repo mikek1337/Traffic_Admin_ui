@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Party } from 'app/@core/models/party';
 import { User, userdata } from 'app/@core/models/userlogin';
 import { HttpService } from 'app/@core/service/http.service';
+import { UiService } from 'app/@core/service/ui.service';
 import { type } from 'os';
 
 @Component({
@@ -13,7 +14,7 @@ export class ViewUserComponent implements OnInit {
 
   user:Party;
 
-  constructor(public httpservice:HttpService) { }
+  constructor(public httpservice:HttpService, private uiservice:UiService) { }
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
@@ -24,9 +25,10 @@ export class ViewUserComponent implements OnInit {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      confirmSave:true
     },
     delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
+      deleteButtonContent: '<i class="nb-close"></i>',
       confirmDelete: true,
     },
     columns: {
@@ -71,6 +73,10 @@ export class ViewUserComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.loaddata();
+  }
+  loaddata()
+  {
     this.httpservice.getregisteredusers().subscribe(res=>{
       this.user = res;
       
@@ -78,9 +84,20 @@ export class ViewUserComponent implements OnInit {
   }
   delete(event)
   {
-    if(window.confirm("Are you sure you want to delete")){
+    if(window.confirm("Are you sure you want to disable users")){
       console.log("work")
-       
+      this.httpservice.disableuser(event.data.partyId,"PARTY_DISABLED").subscribe(res=>{
+          if(res==null)
+          {
+            this.uiservice.showToast("success","User","Disabled");
+          }
+          else
+          {
+            this.uiservice.showToast("danger","error"," ");
+          }
+      });
+      this.loaddata();
+      
     }
     else
     {
@@ -89,8 +106,24 @@ export class ViewUserComponent implements OnInit {
   }
   edit(event)
   {
-    event;
-    window.confirm("Are u sure");
+    
+   if(window.confirm("Are you sure you want to enable user"))
+   {
+     console.log(event);
+     
+    this.httpservice.disableuser(event.data.partyId,"PARTY_ENABLED").subscribe(res=>{
+      console.log(res);
+      if(res==null)
+      {
+        this.uiservice.showToast("success","User","Enabled");
+      }
+      else
+      {
+        this.uiservice.showToast("danger","User","error");
+      }
+    })
+    this.ngOnInit();
+   }
   }
   
 }

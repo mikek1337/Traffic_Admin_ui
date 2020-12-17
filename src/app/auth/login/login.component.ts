@@ -35,7 +35,7 @@ login()
   this.httpservice.Authenticate(this.username,this.password).subscribe(Response=>
     {
           this.userinfos = Response;
-          if(this.userinfos.user.party.partyType == "ADMINSTRATOR"){
+          if(this.userinfos.user.party.partyType == "ADMINSTRATOR" || this.userinfos.user.party.partyType == "TRAFFIC_POLICE" || this.userinfos.user.party.partyId=="SYSTEM_USER" || this.userinfos.user.party.partyId=="INVESTGATOR_TRAFFIC_POLICE"){
           this.storage.setLocalStrorage(this.userinfos);
           console.log(this.userinfos);
           this.unsuccess = false;
@@ -45,8 +45,8 @@ login()
           else{
             this.unsuccess = true;
           }
-             
-      
+
+
     }
     )
   }

@@ -5,16 +5,11 @@
     </a>
     <a class="logo" href="#" (click)="navigateHome()">የአዲስ አበባ ከተማ አስተዳደር የመንገድ ትራፊክ አስተዳደር ኤጀንሲ </a>
   </div>
-  
+
 </div>
 
 <div class="header-container">
   <nb-actions size="small">
-
-    <nb-action class="control-item">
-      <nb-search type="rotate-layout"></nb-search>
-    </nb-action>
-    <nb-action class="control-item" icon="email-outline"></nb-action>
     <nb-action class="control-item" icon="bell-outline" [badgeText]="count" badgePosition="bottom right" badgeStatus="warning" [nbPopover]="notify" [nbPopoverPlacement]="position" [nbPopoverContext]="{text:'mikias'}" (click)="viewed()" >
     </nb-action>
     <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
@@ -23,6 +18,7 @@
                [name]="username"
                [picture]="user?.picture">
       </nb-user>
+      <nb-action class="control-item" icon="power-outline" (click)="open()"></nb-action>
     </nb-action>
   </nb-actions>
 </div>

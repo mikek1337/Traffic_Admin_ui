@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>የአሽከርካሪው መረጃ</nb-card-header>
+      <nb-card-body>
+         <!-- <input type="text" nbInput fullWidth placeholder="Project"> -->
+        <input type="number" nbInput fullWidth placeholder="የአሽ/ብ/ማ/ፈቃድ ቁ.">
+        <nb-card-header>የመንጃ ፍቃድ ደረጃ</nb-card-header>
+          <nb-card-body>
+
+            <nb-select selected="1">
+              <nb-option value="1">አውቶ</nb-option>
+              <nb-option value="2">ታክሲ 1</nb-option>
+              <nb-option value="3">ታክሲ 2</nb-option>
+              <nb-option value="4">ህዝብ 1</nb-option>
+              <nb-option value="5">ህዝብ 2</nb-option>
+              <nb-option value="6">ደርቅ 1</nb-option>
+              <nb-option value="7">ደርቅ 2</nb-option>
+              <nb-option value="8">ልዩ ተንቅሳቃሽ</nb-option>
+
+            </nb-select>
+          </nb-card-body>
+        <div class="full-name-inputs">
+          <input type="text" nbInput fullWidth placeholder="ስም">
+          <input type="text" nbInput fullWidth placeholder="የአባት ስም">
+          <input type="text" nbInput fullWidth placeholder="የአያት ስም">
+        </div>
+        <div class="full-name-inputs">
+          <input type="number" nbInput fullWidth placeholder="ስልክ ቁጥር (+251)">
+        <input type="text" nbInput fullWidth placeholder="የቤት ቁ.">
+        </div>
+
+
+        <h6 style="font-size: 15px;">የልደት ቀን</h6><input type="date" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
+        <h6 style="font-size: 15px;">መንጃ ፍቃድ የተሰጠበት ዓም.</h6><input type="date" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
+        <nb-card>
+          <nb-card-header>ዖታ</nb-card-header>
+          <nb-card-body>
+
+            <nb-select selected="1">
+              <nb-option value="1">ወንድ</nb-option>
+              <nb-option value="2">ሴት</nb-option>
+            </nb-select>
+          </nb-card-body>
+        </nb-card>
+        <nb-card>
+          <nb-card-header>የመኖሪያ አድራሻ</nb-card-header>
+          <nb-card-body>
+            <nb-card-header>ዜግነት</nb-card-header>
+            <nb-select selected="1">
+              <nb-option value="1">ኢትዮጵያዊ</nb-option>
+              <nb-option value="2">ሌላ</nb-option>
+            </nb-select>
+
+            <nb-card-header>ክ/ከተማ</nb-card-header>
+            <nb-select selected="1">
+              <nb-option value="1">አዲስ ከተማ</nb-option>
+              <nb-option value="2">አቃቂ ቃሊቲ</nb-option>
+              <nb-option value="3">አራዳ</nb-option>
+              <nb-option value="4">ቦሌ</nb-option>
+              <nb-option value="5">ጉለሌ</nb-option>
+              <nb-option value="6">ቂርቆስ</nb-option>
+              <nb-option value="7">ኮልፌ ቀራኒዮ</nb-option>
+              <nb-option value="8">ልደታ</nb-option>
+              <nb-option value="9">ንፋስ ስልክ ላፍቶ</nb-option>
+              <nb-option value="10">የካ</nb-option>
+            </nb-select>
+
+            <nb-card-header>ቀበሌ</nb-card-header>
+            <nb-select selected="1">
+              <nb-option value="1">01</nb-option>
+              <nb-option value="2">02</nb-option>
+              <nb-option value="3">03</nb-option>
+              <nb-option value="4">04</nb-option>
+              <nb-option value="5">05</nb-option>
+              <nb-option value="6">06</nb-option>
+              <nb-option value="7">07</nb-option>
+              <nb-option value="8">08</nb-option>
+              <nb-option value="9">09</nb-option>
+              <nb-option value="10">10</nb-option>
+            </nb-select>
+          </nb-card-body>
+
+        </nb-card>
+        <button class="btn btn primary" (click)="previouspage()" style="margin-right: 90%; background: cornflowerblue;">ወደኋላ ተመለስ</button>
+        <button class="btn btn primary" (click)="nextpage()" style="margin-left: 90%; background: cornflowerblue;">ቀጣይ ግጽ</button>
+
+
+       <!-- <input type="text" nbInput fullWidth placeholder="Disabled input" disabled/>
+        <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Text Area"></textarea>
+        <input type="text" nbInput fullWidth fieldSize="small"  placeholder="Small Input">
+        <input type="text" nbInput fullWidth fieldSize="medium"  placeholder="Medium Input">
+        <input type="text" nbInput fullWidth fieldSize="large"  placeholder="Large Input"> -->

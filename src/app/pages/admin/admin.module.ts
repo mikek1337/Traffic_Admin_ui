@@ -26,9 +26,10 @@ import { ViewRecordsComponent } from './view-records/view-records.component';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { AssignTrafficComponent } from './assign-traffic/assign-traffic.component';
 import { ViewIncidentsComponent } from './view-incidents/view-incidents.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-  declarations: [AdminComponent, AddTrafficComponent, ViewUserComponent, ViewRecordsComponent, AssignTrafficComponent, ViewIncidentsComponent],
+  declarations: [AdminComponent, AddTrafficComponent, ViewUserComponent, ViewRecordsComponent, AssignTrafficComponent, ViewIncidentsComponent, ProfileComponent],
   imports: [
     CommonModule,
     FormsModule,

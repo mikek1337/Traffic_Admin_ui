@@ -1,5 +1,12 @@
-<h1 id="title" class="title">Login</h1>
-<p class="sub-title">Hello! Log in with your email.</p>
+
+<div>
+  <img  src="../../../../assets/images/favicon.png" height="80px" width="80px" style="margin-left: 40%;" >
+</div>
+
+<h1 id="title" class="title">
+  የአዲስ አበባ ከተማ አስተዳደር የመንገድ ትራፊክ ማኔጅመንት ኤጀንሲ</h1>
+
+<p class="sub-title">ለመግባት መለያ ስሞን ይጠቀሙ</p>
 
 <nb-alert *ngIf="unsuccess"  outline="danger" role="alert">
   <p class="alert-title"><b>Oh snap!</b></p>
@@ -9,7 +16,7 @@
 </nb-alert>
 
 <nb-alert  *ngIf="success" outline="success" role="alert">
-  <p class="alert-title"><b>Hooray!</b></p>
+  <p class="alert-title"><b>ትእዛዞ ተሳክቷል !</b></p>
   <ul class="alert-message-list">
     <li class="alert-message"></li>
   </ul>
@@ -18,40 +25,40 @@
 <form  aria-labelledby="title">
 
   <div class="form-control-group">
-    <label class="label" for="input-email">Username:</label>
+    <label class="label" for="input-email">መለያ ስም:</label>
     <input class="form-control" [(ngModel)]="username" name="username">
     <ng-container>
       <p class="caption status-danger" *ngIf="usernameempty">
-        Username is required!
+        መለያ ስሞን ያስገቡ !
       </p>
     </ng-container>
   </div>
 
   <div class="form-control-group">
     <span class="label-with-link">
-      <label class="label" for="input-password">Password:</label>
-      <a class="forgot-password caption-2" routerLink="../request-password">Forgot Password?</a>
+      <label class="label" for="input-password">የሚስጥር ቁልፍ:</label>
+      <!-- <a class="forgot-password caption-2" routerLink="../request-password">Forgot Password?</a> -->
     </span>
-    <input class="form-control" [(ngModel)]="password" name="password">
+    <input class="form-control" [(ngModel)]="password" name="password" type="password">
     <ng-container >
       <p class="caption status-danger" *ngIf="passwordempty">
-        Password is required!
+        የሚስጥር ቁልፎን ያስገቡ!
       </p>
       <p class="caption status-danger" *ngIf="false">
-        
+
       </p>
     </ng-container>
   </div>
 
-  <div class="form-control-group accept-group">
+  <!-- <div class="form-control-group accept-group">
     <nb-checkbox name="rememberMe">Remember me</nb-checkbox>
-  </div>
+  </div> -->
 
-  <button class="btn btn-primary" (click)="login()">
-    Log In
+  <button class="btn btn-primary" (click)="login()" >
+    ግባ
   </button>
 </form>
 
-<section class="another-action" aria-label="Register">
+<!-- <section class="another-action" aria-label="Register">
   Don't have an account? <a class="text-link" routerLink="../register">Register</a>
-</section>
+</section> -->

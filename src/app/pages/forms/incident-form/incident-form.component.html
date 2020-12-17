@@ -1,0 +1,189 @@
+
+
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+     <nb-card-header> <h3>እባኮ የተፈጠረውን የትራፊክ አደጋ መረጃ ያስገቡ</h3> </nb-card-header>
+      <nb-card-body>
+        <!-- <input type="text" nbInput fullWidth placeholder="Project"> -->
+        <input type="number" nbInput fullWidth placeholder=" የአደጋው መለያ ቁጥር">
+        <h6 style="font-size: 15px;">የአደጋወን መነሻ ቀን እና ሰዓት ያስገቡ</h6><input type="datetime-local" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
+        <h6 style="font-size: 15px;">የአደጋውን መጨረሻ ምን ያክል እንደቆየ ቀኑን እና ሰዓት ያስገቡ</h6><input type="datetime-local" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
+           <nb-card-body>
+            <nb-card-header>የአደጋው ደረጃ አይነት</nb-card-header>
+            <nb-select selected="1">
+              <nb-option value="1">ቀላል አደጋ </nb-option>
+              <nb-option value="2">መካከለኛ አደጋ</nb-option>
+              <nb-option value="3">ከባድ አደጋ</nb-option>
+            </nb-select>
+
+            <nb-card-header>የአደጋው አይነት</nb-card-header>
+            <nb-select [selected]="incidentnameid" >
+              <nb-option [value]="incidentnameid">{{incidentname}}</nb-option>
+            </nb-select>
+
+            <nb-card-header>አደጋው የተከሰተበት ክ/ከተማ</nb-card-header>
+            <nb-select [selected]="subcities[0].enumId">
+              <nb-option *ngFor="let subcity of subcities" [value]="subcity.enumId">{{subcity.description}}</nb-option>
+            </nb-select>
+          </nb-card-body>
+
+
+
+        <div class="full-name-inputs">
+          <input type="text" nbInput fullWidth placeholder="አድራሻ">
+        </div>
+        <div class="full-name-inputs">
+          <nb-card-header>የመንገዱ አካፋይ ሁኔታ</nb-card-header>
+          <nb-select [selected]="roadseparations[0].enumId">
+            <nb-option *ngFor="let roadseparation of roadseparations" [value]="roadseparation.enumId">{{roadseparation.description}} </nb-option>
+          </nb-select>
+
+          <nb-card-header>የመንገዱ ሁኔታ</nb-card-header>
+          <nb-select selected="1">
+            <nb-option value="1">መጠነኛ ጠመዝማዛ </nb-option>
+            <nb-option value="2">በጣም ጠመዝማዛ </nb-option>
+            <nb-option value="3">ዳገታማ</nb-option>
+            <nb-option value="4">ቁልቁለት</nb-option>
+            <nb-option value="5">ቀጥተኛ እና በጣም ያጋደለ</nb-option>
+            <nb-option value="6">ቀጥተኛ እና ወጣ ገባ </nb-option>
+            <nb-option value="7">ቀጥተኛ እና በመጠኑ ያጋደለ</nb-option>
+            <nb-option value="8">ቀትተኛ እና ለጥ ያለ</nb-option>
+          </nb-select>
+
+          <nb-card-header>Road Geometry Type</nb-card-header>
+          <nb-select [selected]="geomerties[0].enumId">
+              <nb-option *ngFor="let geometry of geomerties" [value]="geometry.enumId">{{geometry.description}}</nb-option>
+          </nb-select>
+
+          <nb-card-header>የመንገዱ ገጽታ ሁኔታ</nb-card-header>
+          <nb-select [selected]="roadalis[0].enumId">
+            <nb-option  *ngFor="let roadali of roadalis" [value]="roadali.enumId">{{roadali.description}}</nb-option>
+
+          </nb-select>
+
+        </div>
+
+
+        <!-- <h6 style="font-size: 15px;">የልደት ቀን</h6><input type="date" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
+        <h6 style="font-size: 15px;">መንጃ ፍቃድ የተሰጠበት ዓም.</h6><input type="date" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
+        <nb-card>
+          <nb-card-header>ዖታ</nb-card-header>
+          <nb-card-body>
+
+            <nb-select selected="1">
+              <nb-option value="1">ወንድ</nb-option>
+              <nb-option value="2">ሴት</nb-option>
+            </nb-select>
+          </nb-card-body>
+        </nb-card>
+        <nb-card> -->
+          <!-- <nb-card-header>የመኖሪያ አድራሻ</nb-card-header>
+          <nb-card-body>
+            <nb-card-header>ዜግነት</nb-card-header>
+            <nb-select selected="1">
+              <nb-option value="1">ኢትዮጵያዊ</nb-option>
+              <nb-option value="2">ሌላ</nb-option>
+            </nb-select> -->
+
+            <!-- <nb-card-header>ክ/ከተማ</nb-card-header>
+            <nb-select selected="1">
+              <nb-option value="1">አዲስ ከተማ</nb-option>
+              <nb-option value="2">አቃቂ ቃሊቲ</nb-option>
+              <nb-option value="3">አራዳ</nb-option>
+              <nb-option value="4">ቦሌ</nb-option>
+              <nb-option value="5">ጉለሌ</nb-option>
+              <nb-option value="6">ቂርቆስ</nb-option>
+              <nb-option value="7">ኮልፌ ቀራኒዮ</nb-option>
+              <nb-option value="8">ልደታ</nb-option>
+              <nb-option value="9">ንፋስ ስልክ ላፍቶ</nb-option>
+              <nb-option value="10">የካ</nb-option>
+            </nb-select> -->
+
+            <!-- <nb-card-header>ቀበሌ</nb-card-header>
+            <nb-select selected="1">
+              <nb-option value="1">01</nb-option>
+              <nb-option value="2">02</nb-option>
+              <nb-option value="3">03</nb-option>
+              <nb-option value="4">04</nb-option>
+              <nb-option value="5">05</nb-option>
+              <nb-option value="6">06</nb-option>
+              <nb-option value="7">07</nb-option>
+              <nb-option value="8">08</nb-option>
+              <nb-option value="9">09</nb-option>
+              <nb-option value="10">10</nb-option>
+            </nb-select> -->
+          <!-- </nb-card-body> -->
+          <button class="btn btn primary" *ngIf="!button"  style="margin-left: 90%; background: cornflowerblue;">save</button>
+          <button class="btn btn primary" *ngIf="button" (click)="nextpage()" style="margin-left: 90%; background: cornflowerblue;">ቀጣይ ገጽ</button>
+        <!-- </nb-card> -->
+</nb-card-body>
+</nb-card>
+
+
+</div>
+
+<!-- <div class="col-lg-6">
+
+<nb-card>
+<nb-card-header>Select</nb-card-header>
+<nb-card-body>
+<nb-select selected="1">
+  <nb-option value="1">Option 1</nb-option>
+  <nb-option value="2">Option 2</nb-option>
+</nb-select>
+</nb-card-body>
+</nb-card>
+
+<nb-card>
+<nb-card-header>Validation States</nb-card-header>
+<nb-card-body>
+<input type="text" nbInput fullWidth status="info"  placeholder="Input with Info">
+<input type="text" nbInput fullWidth status="success"  placeholder="Warning Input">
+<input type="text" nbInput fullWidth status="warning"  placeholder="Danger Input">
+<input type="text" nbInput fullWidth status="danger" placeholder="Danger Input">
+<input type="text" nbInput fullWidth status="primary"  placeholder="Input with Primary">
+<div class="validation-checkboxes">
+  <nb-checkbox status="success">Success Checkbox</nb-checkbox>
+  <nb-checkbox status="warning">Warning Checkbox</nb-checkbox>
+  <nb-checkbox status="danger">Danger Checkbox</nb-checkbox>
+</div>
+</nb-card-body>
+</nb-card>
+
+<nb-card>
+<nb-card-header>Checkboxes & Radios</nb-card-header>
+<nb-card-body class="checkbox-radio">
+<div class="demo-items">
+  <nb-checkbox>Checkbox 1</nb-checkbox>
+  <nb-checkbox [value]="true">Checkbox 2</nb-checkbox>
+</div>
+<div class="demo-items">
+  <nb-radio-group [(value)]="radioGroupValue">
+    <nb-radio
+      [value]="'This is value 1'">
+      Radio 1
+    </nb-radio>
+    <nb-radio
+      [value]="'This is value 2'">
+      Radio 2
+    </nb-radio>
+    <nb-radio
+      [value]="'This is value 3'">
+      Radio 3
+    </nb-radio>
+  </nb-radio-group>
+</div>
+<div class="demo-items">
+  <nb-checkbox disabled>Disabled Checkbox</nb-checkbox>
+  <nb-radio-group disabled>
+    <nb-radio
+      [value]="'Disabled Value'">
+      Disabled Radio
+    </nb-radio>
+  </nb-radio-group>
+</div>
+</nb-card-body>
+</nb-card>
+</div> -->
+</div>

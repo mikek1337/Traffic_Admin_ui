@@ -20,6 +20,9 @@ export class HttpService {
 
     return this.http.get<Userinfo>(this.url + "/Auth", { params: param })
   }
+  getuser(id){
+    return this.http.get<User>(this.url + "/Auth/getuser?id="+id);
+  }
   GetPartyType() {
     return this.http.get<PartyType>(this.url + "/enum/party");
   }
@@ -46,6 +49,18 @@ export class HttpService {
   }
   approve(incident: incident) {
     return this.http.post(this.url + "/Admin/approveincident", incident);
+  }
+  disableuser(id,value)
+  {
+    return this.http.get(this.url+"/Admin/disableuser?id="+id+"&value="+value);
+  }
+  modify(user:User)
+  {
+    return this.http.post(this.url+"/Auth/update",user);
+  }
+  logout(id)
+  {
+    return this.http.get(this.url+"/Auth/logout?id="+id);
   }
 
 }
