@@ -10,9 +10,9 @@
           <div class="col-6">
             <ul type="none" class="detail">
               <li>Party ID: {{incident.partyId}}</li>
-              <li>Incident Type: {{incident.incidetType.replace("_"," ")}}</li>
+              <li>Incident Type: {{incident.incidetTypeNavigation.description}}</li>
               <li>Incident Location: {{incident.locatioDetail}}</li>
-              <li>Weather Condition: {{incident.weatherCondition}}</li>
+              <li>Weather Condition: {{incident.weatherConditionNavigation.description}}</li>
               <li>Vehicles involved: {{incident.noOfVehicleInvolve}}</li>
             </ul>
           </div>
@@ -23,12 +23,9 @@
       </nb-step>
       <nb-step [label]="labelTwo">
         <ng-template #labelTwo>Final step</ng-template>
-        <nb-card>
-          <nb-card-header>leaflet</nb-card-header>
-          <nb-card-body>
+       
             <div leaflet [leafletOptions]="options" class="leaflet" (leafletMapReady)="onmapready($event)" (load)="map.invalidateSize(true)"></div>
-          </nb-card-body>
-        </nb-card>
+          
         <button nbButton nbStepperPrevious class="btn3">prev</button>
         <button nbButton nbStepperNext class="btn4" (click)="assign()">Assign</button>
        

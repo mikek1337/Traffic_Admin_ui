@@ -1,10 +1,16 @@
-<div class="notifications" id="box">
-    <h2>Notifications</h2>
+<div  class="notifications" id="box">
+    <h2 *ngIf="!empty">Notifications</h2>
     <div class="notifications-item" *ngFor="let incident of incidents"> 
-        <div class="text">
-            <h4><a [routerLink]="['pages/Admin/assign',incident.infromIncidentId]"  routerLinkActive="active">{{incident.incidetType.replace("_"," ")}}</a></h4>
+        <div   class="text">
+            <h4><a [routerLink]="['pages/Admin/assign',incident.infromIncidentId]"  routerLinkActive="active">{{incident.incidetTypeNavigation.description}}</a></h4>
             <h4>{{incident.locationDetail}}</h4>
             <p>Date {{incident.incidentDate.replace("T"," ")}}</p>
         </div>
     </div>
+<div *ngIf="empty" class="notifications">
+	<h2>Notification</h2>
+	<div class="notifications-item">
+		<p>no new notifications</p>
+	</div>
+</div>
     

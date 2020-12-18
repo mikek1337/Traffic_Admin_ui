@@ -38,8 +38,14 @@ export class HttpService {
   getinformedincidents() {
     return this.http.get<InformIncident>(this.url + "/Admin/getincident");
   }
-  getincident() {
+  getincident(partyid,partytype) {
+    if(partytype=="ADMINISTRATOR")
+    {
+      return this.http.get<incident>(this.url + "/Traffic?partyid="+partyid)
+    }
+    else{
     return this.http.get<incident>(this.url + "/Admin/getregisteredincident")
+    }
   }
   getincidentbyid(id: any) {
     return this.http.get<InformIncident>(this.url + "/Admin/incidentbyid?id=" + id);
@@ -47,7 +53,10 @@ export class HttpService {
   gettraffic() {
     return this.http.get<Party>(this.url + "/Admin/gettraffic");
   }
-  approve(incident: incident) {
+  approve(incident: incident,incidentid) {
+    this.http.get(this.url+"/Admin/updateincident?id="+incidentid).subscribe(res=>{
+      console.log(res)
+    });
     return this.http.post(this.url + "/Admin/approveincident", incident);
   }
   disableuser(id,value)
@@ -63,4 +72,8 @@ export class HttpService {
     return this.http.get(this.url+"/Auth/logout?id="+id);
   }
 
+  addincident(incident:incident)
+  {
+    return this.http.post(this.url+"/Traffic",incident);
+  }
 }

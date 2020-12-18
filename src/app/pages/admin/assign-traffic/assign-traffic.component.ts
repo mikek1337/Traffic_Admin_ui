@@ -48,6 +48,7 @@ export class AssignTrafficComponent implements OnInit {
 
     //this.options.center = this.latlng;  
     //console.log(this.incidents[0].locationDetail.split(","));
+
     this.activateroute.params.subscribe(p => {
       this.id = p.id;
     });
@@ -73,7 +74,7 @@ export class AssignTrafficComponent implements OnInit {
 
   onmapready(map: L.Map) {
     this.map = map;
-   
+    
     //this.pageData()
     console.log(this.incidents);
     this.activateroute.params.subscribe(p => {
@@ -138,7 +139,7 @@ export class AssignTrafficComponent implements OnInit {
     console.log(this.partyname);
     console.log(this.latlng);
     console.log(this.incident);
-    this.http.approve(this.incident).subscribe(res => {
+    this.http.approve(this.incident,this.incidents[0].infromIncidentId).subscribe(res => {
       if(res==null)
       {
         this.toastrService.showToast("success","Assign","Successful");

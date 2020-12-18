@@ -7,23 +7,23 @@
       <nb-card-body>
         <!-- <input type="text" nbInput fullWidth placeholder="Project"> -->
         <input type="number" nbInput fullWidth placeholder=" የአደጋው መለያ ቁጥር">
-        <h6 style="font-size: 15px;">የአደጋወን መነሻ ቀን እና ሰዓት ያስገቡ</h6><input type="datetime-local" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
-        <h6 style="font-size: 15px;">የአደጋውን መጨረሻ ምን ያክል እንደቆየ ቀኑን እና ሰዓት ያስገቡ</h6><input type="datetime-local" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
+        <h6 style="font-size: 15px;">የአደጋወን መነሻ ቀን እና ሰዓት ያስገቡ</h6><input [(ngModel)]="incidentdata.initialReportedTime" type="datetime-local" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
+        <h6 style="font-size: 15px;">የአደጋውን መጨረሻ ምን ያክል እንደቆየ ቀኑን እና ሰዓት ያስገቡ</h6><input [(ngModel)]="incidentdata.endTime" type="datetime-local" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
            <nb-card-body>
             <nb-card-header>የአደጋው ደረጃ አይነት</nb-card-header>
-            <nb-select selected="1">
-              <nb-option value="1">ቀላል አደጋ </nb-option>
-              <nb-option value="2">መካከለኛ አደጋ</nb-option>
-              <nb-option value="3">ከባድ አደጋ</nb-option>
+            <nb-select [(ngModel)]="incidentdata.incidentCriticalLevel" selected="MINOR_INCIDENT_LEVEL">
+              <nb-option value="MINOR_INCIDENT_LEVEL">ቀላል አደጋ </nb-option>
+              <nb-option value="INTERMEDIATE_INCIDET_LEVEL">መካከለኛ አደጋ</nb-option>
+              <nb-option value="MAJOR_INCIDET_LEVEL">ከባድ አደጋ</nb-option>
             </nb-select>
 
             <nb-card-header>የአደጋው አይነት</nb-card-header>
-            <nb-select [selected]="incidentnameid" >
+            <nb-select [(ngModel)]="incidentdata.incidentType" [selected]="incidentnameid" >
               <nb-option [value]="incidentnameid">{{incidentname}}</nb-option>
             </nb-select>
 
             <nb-card-header>አደጋው የተከሰተበት ክ/ከተማ</nb-card-header>
-            <nb-select [selected]="subcities[0].enumId">
+            <nb-select [(ngModel)]="incidentdata.incidentSubcity" >
               <nb-option *ngFor="let subcity of subcities" [value]="subcity.enumId">{{subcity.description}}</nb-option>
             </nb-select>
           </nb-card-body>
@@ -31,33 +31,22 @@
 
 
         <div class="full-name-inputs">
-          <input type="text" nbInput fullWidth placeholder="አድራሻ">
+          <input [(ngModel)]="incidentdata.incidentAddress" type="text" nbInput fullWidth placeholder="አድራሻ">
         </div>
         <div class="full-name-inputs">
           <nb-card-header>የመንገዱ አካፋይ ሁኔታ</nb-card-header>
-          <nb-select [selected]="roadseparations[0].enumId">
+          <nb-select [(ngModel)]="incidentdata.roadSeparation">
             <nb-option *ngFor="let roadseparation of roadseparations" [value]="roadseparation.enumId">{{roadseparation.description}} </nb-option>
           </nb-select>
 
-          <nb-card-header>የመንገዱ ሁኔታ</nb-card-header>
-          <nb-select selected="1">
-            <nb-option value="1">መጠነኛ ጠመዝማዛ </nb-option>
-            <nb-option value="2">በጣም ጠመዝማዛ </nb-option>
-            <nb-option value="3">ዳገታማ</nb-option>
-            <nb-option value="4">ቁልቁለት</nb-option>
-            <nb-option value="5">ቀጥተኛ እና በጣም ያጋደለ</nb-option>
-            <nb-option value="6">ቀጥተኛ እና ወጣ ገባ </nb-option>
-            <nb-option value="7">ቀጥተኛ እና በመጠኑ ያጋደለ</nb-option>
-            <nb-option value="8">ቀትተኛ እና ለጥ ያለ</nb-option>
-          </nb-select>
 
           <nb-card-header>Road Geometry Type</nb-card-header>
-          <nb-select [selected]="geomerties[0].enumId">
+          <nb-select [(ngModel)]="incidentdata.roadGeometryType">
               <nb-option *ngFor="let geometry of geomerties" [value]="geometry.enumId">{{geometry.description}}</nb-option>
           </nb-select>
 
           <nb-card-header>የመንገዱ ገጽታ ሁኔታ</nb-card-header>
-          <nb-select [selected]="roadalis[0].enumId">
+          <nb-select [(ngModel)]="incidentdata.roadAlignment">
             <nb-option  *ngFor="let roadali of roadalis" [value]="roadali.enumId">{{roadali.description}}</nb-option>
 
           </nb-select>
@@ -114,8 +103,8 @@
               <nb-option value="10">10</nb-option>
             </nb-select> -->
           <!-- </nb-card-body> -->
-          <button class="btn btn primary" *ngIf="!button"  style="margin-left: 90%; background: cornflowerblue;">save</button>
-          <button class="btn btn primary" *ngIf="button" (click)="nextpage()" style="margin-left: 90%; background: cornflowerblue;">ቀጣይ ገጽ</button>
+          <button class="btn btn primary" *ngIf="!showbutton"  style="margin-left: 90%; background: cornflowerblue;" (click)="save()">save</button>
+          <button class="btn btn primary" *ngIf="showbutton" (click)="nextpage()" style="margin-left: 90%; background: cornflowerblue;">ቀጣይ ገጽ</button>
         <!-- </nb-card> -->
 </nb-card-body>
 </nb-card>

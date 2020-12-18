@@ -64,8 +64,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.currentTheme = this.themeService.currentTheme;
 
       this.username=this.storage.getLocalStorage("username");
-      this.httpservice.getinformedincidents().subscribe(res=> {this.count=Object.keys(res).length; 
-      console.log(this.count)} )
+      this.getdata();
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
       .pipe(
@@ -81,7 +80,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
       )
       .subscribe(themeName => this.currentTheme = themeName);
 
+      window.setInterval(r=>{
+        this.getdata()
+      },40000)
       
+  }
+  getdata()
+  {
+    this.httpservice.getinformedincidents().subscribe(res=> {this.count=Object.keys(res).length; 
+      console.log(this.count)} )
   }
 
   ngOnDestroy() {

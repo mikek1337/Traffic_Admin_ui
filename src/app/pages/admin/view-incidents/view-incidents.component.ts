@@ -11,9 +11,13 @@ export class ViewIncidentsComponent implements OnInit {
 
   constructor(private http:HttpService) { }
 incidents:InformIncident;
+empty:boolean=false;
   ngOnInit(): void {
   this.http.getinformedincidents().subscribe(res=>{
     this.incidents = res;
+    if (Object.keys(this.incidents).length==0) {
+    	this.empty = true;
+    }
   });
   }
 

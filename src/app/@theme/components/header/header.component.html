@@ -10,7 +10,7 @@
 
 <div class="header-container">
   <nb-actions size="small">
-    <nb-action class="control-item" icon="bell-outline" [badgeText]="count" badgePosition="bottom right" badgeStatus="warning" [nbPopover]="notify" [nbPopoverPlacement]="position" [nbPopoverContext]="{text:'mikias'}" (click)="viewed()" >
+    <nb-action class="control-item" icon="bell-outline" [badgeText]="count" badgePosition="bottom right" badgeStatus="warning" [nbPopover]="notify" [nbPopoverPlacement]="position" [nbPopoverContext]="{text:'mikias'}" >
     </nb-action>
     <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
       <nb-user [nbContextMenu]="userMenu"

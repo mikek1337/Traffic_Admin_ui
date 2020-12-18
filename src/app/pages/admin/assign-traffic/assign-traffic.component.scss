@@ -11,14 +11,11 @@
   }
 
   ::ng-deep .leaflet-container {
-    width: 100%;
+    
     height: nb-theme(card-height-large);
   }
 }
-.leaflet
-{
-  height: 50%;
-}
+
 button
 {
     margin-top: 30px;

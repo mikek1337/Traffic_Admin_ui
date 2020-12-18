@@ -1,6 +1,11 @@
-<div *ngFor="let incident of incidents">
-    <nb-card [routerLink]="['../assign',incident.infromIncidentId]" routerLinkActive="active">
-        <nb-card-body>{{incident.incidetType}}</nb-card-body>
+<div  *ngFor="let incident of incidents">
+    <nb-card *ngIf="!empty" [routerLink]="['../assign',incident.infromIncidentId]" routerLinkActive="active">
+        <nb-card-body>{{incident.incidetTypeNavigation.description}}
+        </nb-card-body>
         <nb-card-footer>{{incident.incidentDate}}</nb-card-footer>
     </nb-card>
+   
 </div>
+<div *ngIf="empty" style="margin-left: 40%;margin-top: 20%;">
+    	<p>Empty no new incidents reported</p>
+    </div>

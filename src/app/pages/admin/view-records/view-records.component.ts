@@ -22,7 +22,7 @@ filter = new FormControl('');
    }
   displayedColumns:string[] = ['Id','Incident Date','Reported Time','incident level','Address','Subcity','Commuter Involve','Cause','Road Alignment','Road Geometry Type','Map Information','Vehicles Involve','Party Id','Road Separation','Road Surface Condition','Road Surface Type']
   ngOnInit(): void {
-    this.httpservice.getincident().subscribe(res=>{
+    this.httpservice.getincident(1,"null").subscribe(res=>{
       this.incidents = res; 
       console.log(this.incidents.roadAlignment);
       this.tempins.push(this.incidents);   
