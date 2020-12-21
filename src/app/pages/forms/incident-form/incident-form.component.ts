@@ -64,7 +64,16 @@ incidentdata= new incident()
   }
   nextpage()
   {
-    this.route.navigateByUrl("pages/forms/driver");
+    this.incidentdata.partyId = this.partyid;
+    this.incidentdata.incidentDate = this.incidentdata.initialReportedTime;
+    this.http.addincident(this.incidentdata).subscribe(res=>{
+      if(res!=null)
+      {
+        console.log(res);
+        this.route.navigateByUrl('pages/forms/driver/'+res);
+      }
+    })  
+    
   }
   save()
   {

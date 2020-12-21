@@ -9,7 +9,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { IncidentFormComponent } from './incident-form/incident-form.component';
 import { DriversComponent } from './drivers/drivers.component';
 import { IncidentCaseComponent } from './incident-case/incident-case.component';
-
+import { AskAssistanceComponent} from './ask-assistance/ask-assistance.component';
 const routes: Routes = [
   {
     path: '',
@@ -46,12 +46,16 @@ const routes: Routes = [
         component: DatepickerComponent,
       },
       {
-        path:'driver',
+        path:'driver/:id',
         component: DriversComponent,
       },
       {
         path:'incidentCase',
         component: IncidentCaseComponent,
+      },
+      {
+        path:'askassistance',
+        component:AskAssistanceComponent
       },
     ],
   },

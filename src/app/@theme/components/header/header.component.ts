@@ -80,9 +80,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       )
       .subscribe(themeName => this.currentTheme = themeName);
 
-      window.setInterval(r=>{
-        this.getdata()
-      },40000)
+      // window.setInterval(r=>{
+      //   this.getdata()
+      // },40000)
       
   }
   getdata()

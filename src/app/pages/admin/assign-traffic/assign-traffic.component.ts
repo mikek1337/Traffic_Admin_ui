@@ -106,7 +106,7 @@ export class AssignTrafficComponent implements OnInit {
 
   addincidentmarker(location: any, incidenttype: string) {
     const marker = L.marker(location).setIcon(L.icon({
-      iconSize: [40, 40],
+      iconSize: [60, 60],
       iconUrl: "assets/images/car-accident.png"
     })).bindPopup(incidenttype).openPopup(L.latLng({ lat: location[0], lng: location[1] }))
     marker.addTo(this.map)
@@ -118,7 +118,8 @@ export class AssignTrafficComponent implements OnInit {
 
   }
   addtrafficpolicemarker(location: any, name: string, id: any) {
-    const marker = L.marker(location).bindPopup("Traffic on location: " + name).openPopup(L.latLng({ lat: location[0], lng: location[1] }));
+    const marker = L.marker(location).bindPopup("Traffic on location: " + name).openPopup(L.latLng({ lat: location[0], lng: location[1] })).setIcon(L.icon({iconSize: [60, 60],
+      iconUrl: "assets/images/trafficicon.png"}));
     console.log(marker.togglePopup())
     marker.addTo(this.map);
     

@@ -1,3 +1,4 @@
+import {Party} from './party';
 export class Enums
 {
     enumId:string;
@@ -46,4 +47,35 @@ export class incident
     vehicles:any;
     victim:any;
     weatherCondition:string;
+}
+
+export class driver
+{
+    driverAge: any
+    driverEducationLevel: string
+    driverEducationLevelNavigation: null
+    driverId: any
+    driverLicenceLevel: string
+    driverLicenceLevelNavigation: null
+    driverName: string
+    driverSDrivigExperience: string
+    driverSDrivigExperienceNavigation: null
+    driverSex: string
+    driverSexNavigation: null
+    driverSubcity: string
+    driverSubcityNavigation: null
+    driverVehicleRelationship: string
+    driverVehicleRelationshipNavigation: null
+    driversPlate: string
+    //incident: incident
+    incidentId: any;
+    nationality: string;
+    //party: Party;
+    partyId: any;
+
+    constructor()
+    {
+        //this.party = new Party();
+        //this.incident = new incident();
+    }
 }

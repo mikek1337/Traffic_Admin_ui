@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User, Userinfo } from 'app/@core/models/userlogin';
-import { Enums, incident, InformIncident } from '../models/incident';
+import { Enums, incident, InformIncident, driver } from '../models/incident';
 import { Party, PartyType } from '../models/party';
 
 
@@ -75,5 +75,13 @@ export class HttpService {
   addincident(incident:incident)
   {
     return this.http.post(this.url+"/Traffic",incident);
+  }
+  adddriver(driver:driver)
+  {
+    return this.http.post(this.url+"/Traffic/adddriver",driver);
+  }
+  getinvestofficers()
+  {
+    return this.http.get<Party>(this.url+"/Traffic/getinvestigator");
   }
 }

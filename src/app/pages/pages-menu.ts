@@ -95,6 +95,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/forms/buttons',
       },
       {
+        title: 'Ask Assistance',
+        link: '/pages/forms/askassistance',
+      },
+      {
         title: 'Datepicker',
         link: '/pages/forms/datepicker',
         hidden:true

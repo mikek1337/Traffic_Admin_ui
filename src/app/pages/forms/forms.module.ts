@@ -22,7 +22,8 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
 import { IncidentCaseComponent } from './incident-case/incident-case.component';
 import { IncidentFormComponent } from './incident-form/incident-form.component';
 import { DriversComponent } from './drivers/drivers.component';
-
+import { AskAssistanceComponent } from './ask-assistance/ask-assistance.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 @NgModule({
   imports: [
     ThemeModule,
@@ -38,6 +39,7 @@ import { DriversComponent } from './drivers/drivers.component';
     NbSelectModule,
     NbIconModule,
     ngFormsModule,
+    LeafletModule,
   ],
   declarations: [
     FormsComponent,
@@ -48,6 +50,7 @@ import { DriversComponent } from './drivers/drivers.component';
     IncidentCaseComponent,
     IncidentFormComponent,
     DriversComponent,
+    AskAssistanceComponent,
   ],
 })
 export class FormsModule { }
