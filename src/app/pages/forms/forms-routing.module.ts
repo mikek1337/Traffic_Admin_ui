@@ -10,6 +10,9 @@ import { IncidentFormComponent } from './incident-form/incident-form.component';
 import { DriversComponent } from './drivers/drivers.component';
 import { IncidentCaseComponent } from './incident-case/incident-case.component';
 import { AskAssistanceComponent} from './ask-assistance/ask-assistance.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { DamageComponent } from './damage/damage.component';
+import { VictimsComponent } from './victims/victims.component';
 const routes: Routes = [
   {
     path: '',
@@ -56,6 +59,18 @@ const routes: Routes = [
       {
         path:'askassistance',
         component:AskAssistanceComponent
+      },
+      {
+        path:'vehicle',
+        component:VehiclesComponent
+      },
+      {
+        path:'damage',
+        component:DamageComponent
+      },
+      {
+        path:'victim',
+        component:VictimsComponent
       },
     ],
   },

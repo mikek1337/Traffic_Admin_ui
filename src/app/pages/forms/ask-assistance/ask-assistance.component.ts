@@ -24,14 +24,14 @@ options = {
 
     zoom: 14,
     center: L.latLng({ lat: 8.9806, lng: 38.7578 }),
-    
+
   };
   ngOnInit(): void {
   }
 
   onmapready(map: L.Map) {
   	this.map = map;
-  	this.getlocation();
+  	//this.getlocation();
   	this.http.getinvestofficers().subscribe(res=>{
   		this.traffic = res;
   		for (const key in this.traffic) {
@@ -45,19 +45,19 @@ options = {
   	})
   }
 
-  getlocation()
+  /* getlocation()
   {
   	this.map.locate();
-  	
+
   	this.map.on('locationfound',(event)=>{
   	console.log(event.latlng);
   	const marker = L.marker(event.latlng).setIcon(L.icon({ iconSize: [60, 60],
       iconUrl: "assets/images/trafficicon.png"}));
   	marker.addTo(this.map);
   	});
-  	
-  	
-  }
+
+
+  } */
   addtrafficpolicemarker(location: any, name: string, id: any) {
     const marker = L.marker(location).bindPopup("Traffic on location: " + name).openPopup(L.latLng({ lat: location[0], lng: location[1] })).setIcon(L.icon({iconSize: [40, 40],
       iconUrl: "assets/images/investigator.png"}));

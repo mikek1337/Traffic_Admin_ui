@@ -24,6 +24,9 @@ import { IncidentFormComponent } from './incident-form/incident-form.component';
 import { DriversComponent } from './drivers/drivers.component';
 import { AskAssistanceComponent } from './ask-assistance/ask-assistance.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { VictimsComponent } from './victims/victims.component';
+import { DamageComponent } from './damage/damage.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
 @NgModule({
   imports: [
     ThemeModule,
@@ -51,6 +54,9 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     IncidentFormComponent,
     DriversComponent,
     AskAssistanceComponent,
+    VictimsComponent,
+    DamageComponent,
+    VehiclesComponent,
   ],
 })
 export class FormsModule { }
