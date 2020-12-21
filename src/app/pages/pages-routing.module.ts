@@ -21,6 +21,10 @@ const routes: Routes = [{
       loadChildren: () => import("./admin/admin.module").then(m => m.AdminModule),
     },
     {
+      path:'sysuser',
+      loadChildren: () => import("./sys-user/sys-user.module").then(m => m.SysUserModule),
+    },
+    {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
         .then(m => m.LayoutModule),

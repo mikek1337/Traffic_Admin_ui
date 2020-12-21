@@ -118,6 +118,24 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
+    title:'System User',
+    group:true
+  },
+  {
+    title:'Records',
+    icon:'keypad-outline',
+    children:[
+      {
+        title:'records',
+        link:'/pages/sysuser/sysrecords',
+      },
+      {
+        title:'report',
+        link:'/pages/sysuser/report'
+      }
+    ]
+  },
+  {
     title: 'UI Features',
     icon: 'keypad-outline',
     link: '/pages/ui-features',

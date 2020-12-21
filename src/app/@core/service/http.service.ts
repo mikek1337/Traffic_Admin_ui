@@ -84,4 +84,10 @@ export class HttpService {
   {
     return this.http.get<Party>(this.url+"/Traffic/getinvestigator");
   }
+
+  ask(incident: incident)
+  {
+    return this.http.post(this.url + "/Admin/approveincident", incident);
+  }
+
 }
