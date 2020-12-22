@@ -3,14 +3,18 @@
     <nb-card>
       <nb-card-header>የተጎጂ ስም</nb-card-header>
       <nb-card-body>
-        <input type="text"  nbInput fullWidth>
+        <nb-card-header>የተጎጂዎች ቁጥር</nb-card-header>
+        <input [(ngModel)]="victimcount" type="number"  [readOnly]="set"  nbInput fullWidth style="margin-bottom: 10px;">
+        <nb-card-header>የተጎጂ ስም</nb-card-header>
+        <input [(ngModel)]="victim.party.partyName" type="text"  nbInput fullWidth>
+        
       </nb-card-body>
     </nb-card>
     <nb-card>
       <nb-card-header>የተጎጂ እድሜ</nb-card-header>
       <nb-card-body>
          <!-- <input type="text" nbInput fullWidth placeholder="Project"> -->
-        <input  type="number" nbInput fullWidth>
+        <input [(ngModel)]="victim.victimAge"  type="number" nbInput fullWidth>
         <nb-card-header>የተጎጂ ዖታ</nb-card-header>
           <nb-card-body>
 
@@ -23,7 +27,7 @@
           <nb-card-header>የተጎጂ እንቅስቃሳ</nb-card-header>
           <nb-card-body>
 
-            <nb-select fullWidth >
+            <nb-select [(ngModel)]="victim.victimManeuver" fullWidth >
 
               <nb-option *ngFor="let Maneuver of victimManeuver" [value]="Maneuver.enumId">{{Maneuver.description}}</nb-option>
             </nb-select>
@@ -33,13 +37,13 @@
           <nb-card-header>ጉዳት የደረሰበት ተጎጂ መግለጫ</nb-card-header>
           <nb-card-body>
             <nb-card-header>የተጎጂ ስራ</nb-card-header>
-            <nb-select >
+            <nb-select [(ngModel)]="victim.victimProfession" >
               <nb-option *ngFor="let profession of victimProfession" [value]="profession.enumId">{{profession.description}}</nb-option>
             </nb-select>
 
             <nb-card-header>የተጎጂ አካል ጤንነት</nb-card-header>
-            <nb-select >
-              <nb-option *ngFor="let Health of victimHealth" [value]="Health.enumId">{{Health.description}}</nb-option>
+            <nb-select [(ngModel)]="victim.victimHealthStatus">
+              <nb-option *ngFor="let Health of victimHealth" [value]="Health.enumId">{{Health.enumId}}</nb-option>
 
             </nb-select>
 
@@ -48,5 +52,5 @@
         </nb-card>
 
         <button class="btn btn primary"  style="margin-right: 90%; background: cornflowerblue;">ወደኋላ ተመለስ</button>
-        <button class="btn btn primary"  style="margin-left: 90%; background: cornflowerblue;">mmmmm</button>
+        <button class="btn btn primary"  style="margin-left: 90%; background: cornflowerblue;" (click)="register()">mmmmm</button>
 

@@ -1,0 +1,40 @@
+<nb-card>
+  <nb-card-header>
+    Incident Table
+  </nb-card-header>
+  <nb-card-body>
+
+<table class="table table-striped ">
+  <thead>
+  <tr >
+    <th class="bg-dark text-light"   *ngFor='let col of displayedColumns' >{{col}}</th>   
+  </tr>
+  </thead>
+  <tbody>
+  <tr   *ngFor='let element of incidents'>
+    <td>
+      {{element.incidentId}}
+    </td>
+    <td>{{element.incidentDate}}</td>
+    <td>{{element.initialReportedTime}}</td>
+    <td>{{element.incidentCriticalLevel}}</td>
+    <td>{{element.incidentAddress}}</td> 
+    <td>{{element.incidentSubcity}}</td>
+    <td>{{element.noOfCommuterInvolve}}</td>
+    <td>{{element.incidentContributingCause}}</td>
+    <td>{{element.roadAlignment}}</td>
+    <td>{{element.roadGeometryType}}</td>
+    <td>{{element.mapInformation}}</td>
+    <td>{{element.noOfVehiclesInvolve}}</td>
+    <td>{{element.partyId}}</td>
+    <td>{{element.roadSeparation}}</td>
+    <td>{{element.roadSurfaceCondition}}</td>
+    <td>{{element.roadSurfaceType}}</td>
+  </tr>
+  </tbody>
+</table>
+</nb-card-body>
+<nb-card-footer>
+  
+</nb-card-footer>
+</nb-card>

@@ -61,7 +61,7 @@ const routes: Routes = [
         component:AskAssistanceComponent
       },
       {
-        path:'vehicle',
+        path:'vehicle/:incidentid/:driverid',
         component:VehiclesComponent
       },
       {
@@ -69,7 +69,7 @@ const routes: Routes = [
         component:DamageComponent
       },
       {
-        path:'victim',
+        path:'victim/:incidentid',
         component:VictimsComponent
       },
     ],

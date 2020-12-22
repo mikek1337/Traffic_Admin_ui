@@ -79,3 +79,48 @@ export class driver
         //this.incident = new incident();
     }
 }
+
+export class vehicle
+{
+    vehicleNo:any;
+    vehicleAge:string;
+    vehicleManeuver:string;
+    vehicleModel:string;
+    vehicleName:string;
+    vehicleType:string;
+    vehicleOwnerName:string;
+    vehicleOwnership:string;
+    vehicleRelatedDeficiency:string;
+    vehicleDamagedParts:string;
+    insurancePolicy:string
+    insuranceExpiryDate:any;
+    speedEstimated:any;
+    licensePlate:string;
+    incidentId:any;
+    partyId:any;
+}
+export class damage
+{
+    damageId:string;
+    damageType:string;
+    damageCatagory:string;
+    estimateDamagePrice:any;
+    itemName:string;
+    incidentId;
+}
+export class victim
+{
+
+    victimAge: string;
+    victimHealthStatus: string;
+    victimManeuver: string;
+    victimProfession: string;
+    partyId:any;
+    incidentId:any;
+    party:Party
+
+    constructor()
+    {
+        this.party = new Party;  
+    }
+}

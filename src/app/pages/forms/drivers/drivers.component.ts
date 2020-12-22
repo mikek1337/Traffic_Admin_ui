@@ -13,6 +13,7 @@ export class DriversComponent implements OnInit {
 
   constructor(private route:Router,private http:HttpService,private router:ActivatedRoute,private storage:StorageService,private uiservice:UiService) { }
   driverlicenses:Enums
+  driverid:any[]=[];
   subcitys:Enums
   noofdriver:any;
   driversprocessed:any=1;
@@ -55,8 +56,9 @@ export class DriversComponent implements OnInit {
       console.log(this.driver);
       this.write = true;
       this.http.adddriver(this.driver).subscribe(res=>{
-        if(res==null)
+        if(res!=null)
         {
+          this.driverid.push(res);
           console.log("sent")
           this.driver = new driver();
           this.driversprocessed++;
@@ -67,11 +69,13 @@ export class DriversComponent implements OnInit {
     {
       console.log(this.driver);
      this.http.adddriver(this.driver).subscribe(res=>{
-        if(res==null)
+        if(res!=null)
         {
+          this.driverid.push(res);
           this.uiservice.showToast("success","Drivers added","");
           console.log("sent")
-          this.route.navigateByUrl("pages/forms/incidentCase");
+          this.route.navigateByUrl("pages/forms/vehicle/"+this.driver.incidentId+"/"+this.driverid);
+          console.log(this.driverid);
           //this.driver = new driver();
           //this.driversprocessed++;
         }

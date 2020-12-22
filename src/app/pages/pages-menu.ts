@@ -102,19 +102,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Datepicker',
         link: '/pages/forms/datepicker',
         hidden:true
-      },
-      {
-        title: 'Vehicle',
-        link: '/pages/forms/vehicle'
-      },
-      {
-        title: 'Damage',
-        link: '/pages/forms/damage'
-      },
-      {
-        title: 'Victim',
-        link: '/pages/forms/victim'
-      },
+      }
     ],
   },
   {

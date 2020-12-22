@@ -52,12 +52,12 @@ options = {
   {
   	
   	this.map.locate()
-  	this.map.on('locationfound',(event)=>{
-  		this.location= event.latlng.lat +","+event.latlng.lng;
-  		console.log(this.location)
-  		const marker = L.marker(event.latlng)
-  		marker.addTo(this.map);
-  	},)
+  //	this.map.on('locationfound',(event)=>{
+  	//	this.location= event.latlng.lat +","+event.latlng.lng;
+  	//	console.log(this.location)
+  	//	const marker = L.marker(event.latlng)
+  	//	marker.addTo(this.map);
+  	//},)
   }
 
   addtrafficpolicemarker(location: any, name: string, id: any) {

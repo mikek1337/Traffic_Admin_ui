@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User, Userinfo } from 'app/@core/models/userlogin';
-import { Enums, incident, InformIncident, driver } from '../models/incident';
+import { Enums, incident, InformIncident, driver, vehicle, victim } from '../models/incident';
 import { Party, PartyType } from '../models/party';
 
 
@@ -88,6 +88,14 @@ export class HttpService {
   ask(incident: incident)
   {
     return this.http.post(this.url + "/Admin/approveincident", incident);
+  }
+  addvehicle(vehicles: vehicle)
+  {
+    return this.http.post(this.url+"/Traffic/vehicle",vehicles);
+  }
+  addvictim(victim:victim)
+  {
+    return this.http.post(this.url+"/Traffic/victim",victim);
   }
 
 }

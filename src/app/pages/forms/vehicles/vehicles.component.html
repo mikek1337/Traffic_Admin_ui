@@ -1,18 +1,26 @@
 <div class="row">
   <div class="col-lg-12">
-
     <nb-card>
       <nb-card-header>የተሽከርካሪው መረጃ</nb-card-header>
       <nb-card-body>
+        <nb-card>
+          <nb-card-header>vehicle</nb-card-header>
+        <nb-card-body>
+          <input [(ngModel)]="vehicle.vehicleName" type="text"  nbInput fullWidth placeholder="ስም">
+          <input type="text" [(ngModel)]="vehicle.vehicleModel"  nbInput fullWidth placeholder="model">
+          <input type="text" [(ngModel)]="vehicle.licensePlate"  nbInput fullWidth placeholder="license">
+        </nb-card-body>
+        </nb-card>
+
         <nb-card-header>የተሽከርካሪው የአገልግሎት ዘመን</nb-card-header>
-         <nb-select  selected="1">
+         <nb-select [(ngModel)]="vehicle.vehicleAge"  >
           <nb-option  *ngFor="let age of vehicleAge" [value]="age.enumId">{{age.description}}</nb-option>
           </nb-select>
 
           <nb-card-header>የተሽከርካሪ ጉድለት</nb-card-header>
 
           <nb-card-body>
-            <nb-select  selected="1">
+            <nb-select [(ngModel)]="vehicle.vehicleRelatedDeficiency">
               <nb-option  *ngFor="let deficiency of vehicleRelatedDeficiency" [value]="deficiency.enumId">{{deficiency.description}}</nb-option>
             </nb-select>
           </nb-card-body>
@@ -20,8 +28,8 @@
         <nb-card>
           <nb-card-header>አደጋ የፈጸሙ ተሽርከሪዎች ዐይነት</nb-card-header>
           <nb-card-body>
-            <nb-select  fullWidth>
-              <nb-option  *ngFor="let type of vehicleType" [value]="type.enumId">{{type.description}}</nb-option>
+            <nb-select [(ngModel)]="vehicle.vehicleType"  fullWidth>
+              <nb-option   *ngFor="let type of vehicleType" [value]="type.enumId">{{type.description}}</nb-option>
             </nb-select>
           </nb-card-body>
         </nb-card>
@@ -29,7 +37,7 @@
           <nb-card-header>አደጋ የፈጸሙ ተሽርከሪዎች ንብረትነት</nb-card-header>
           <nb-card-body>
 
-            <nb-select fullWidth >
+            <nb-select [(ngModel)]="vehicle.vehicleOwnership" fullWidth >
               <nb-option  *ngFor="let Owner of vehicleOwnership" [value]="Owner.enumId">{{Owner.description}}</nb-option>
             </nb-select>
           </nb-card-body>
@@ -39,12 +47,12 @@
         <nb-card-header>አደጋ ፈጻሚ ተሽርከሪ እንቅስቃሴ</nb-card-header>
         <nb-card-body>
 
-          <nb-select fullWidth >
+          <nb-select [(ngModel)]="vehicle.vehicleManeuver" fullWidth >
             <nb-option  *ngFor="let Maneuver of vehicleManeuver" [value]="Maneuver.enumId">{{Maneuver.description}}</nb-option>
           </nb-select>
         </nb-card-body>
         </nb-card>
 
         <button class="btn btn primary"  style="margin-right: 90%; background: cornflowerblue;">ወደኋላ ተመለስ</button>
-        <button class="btn btn primary"  style="margin-left: 90%; background: cornflowerblue;">ምምምም</button>
+        <button class="btn btn primary"  style="margin-left: 90%; background: cornflowerblue;" (click)="register()">ምምምም</button>
 
