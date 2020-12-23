@@ -7,7 +7,7 @@
         <input [(ngModel)]="victimcount" type="number"  [readOnly]="set"  nbInput fullWidth style="margin-bottom: 10px;">
         <nb-card-header>የተጎጂ ስም</nb-card-header>
         <input [(ngModel)]="victim.party.partyName" type="text"  nbInput fullWidth>
-        
+
       </nb-card-body>
     </nb-card>
     <nb-card>
@@ -18,7 +18,7 @@
         <nb-card-header>የተጎጂ ዖታ</nb-card-header>
           <nb-card-body>
 
-            <nb-select >
+            <nb-select [(ngModel)]="victim.victimSex" >
               <nb-option value="MALE">ወንድ</nb-option>
               <nb-option value="FEMALE">ሴት</nb-option>
             </nb-select>

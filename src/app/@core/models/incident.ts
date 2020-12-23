@@ -57,12 +57,10 @@ export class driver
     driverId: any
     driverLicenceLevel: string
     driverLicenceLevelNavigation: null
-    driverName: string
     driverSDrivigExperience: string
     driverSDrivigExperienceNavigation: null
     driverSex: string
     driverSexNavigation: null
-    driverSubcity: string
     driverSubcityNavigation: null
     driverVehicleRelationship: string
     driverVehicleRelationshipNavigation: null
@@ -70,12 +68,12 @@ export class driver
     //incident: incident
     incidentId: any;
     nationality: string;
-    //party: Party;
+    party: Party;
     partyId: any;
 
     constructor()
     {
-        //this.party = new Party();
+        this.party = new Party();
         //this.incident = new incident();
     }
 }
@@ -104,8 +102,8 @@ export class damage
     damageId:string;
     damageType:string;
     damageCatagory:string;
-    estimateDamagePrice:any;
     itemName:string;
+    price:any
     incidentId;
 }
 export class victim
@@ -114,6 +112,7 @@ export class victim
     victimAge: string;
     victimHealthStatus: string;
     victimManeuver: string;
+    victimSex:string;
     victimProfession: string;
     partyId:any;
     incidentId:any;
@@ -121,6 +120,7 @@ export class victim
 
     constructor()
     {
-        this.party = new Party;  
+        this.party = new Party;
     }
 }
+

@@ -1,1 +1,17 @@
-<p>damage works!</p>
+<nb-card>
+  <nb-card-header>Damage</nb-card-header>
+  <nb-card-body>
+    <label for="category">የጉዳት ምድቦች</label>
+  <nb-select [(ngModel)]="damaged.damageCatagory" id="category">
+    <nb-option *ngFor="let category of categories" [value]="category.enumId">{{category.description}}</nb-option>
+  </nb-select>
+  <label for="type">የጉዳት ዓይነቶች</label>
+  <nb-select [(ngModel)]="damaged.damageType" id="type" (ngModelChange)="change()">
+    <nb-option *ngFor="let type of types" [value]="type.enumId">{{type.description}}</nb-option>
+  </nb-select>
+</nb-card-body>
+<nb-card-body *ngIf="showtable">
+  <ng2-smart-table [settings]="settings" (createConfirm)="save($event)" [source]="damages">
+  </ng2-smart-table>
+</nb-card-body>
+</nb-card>

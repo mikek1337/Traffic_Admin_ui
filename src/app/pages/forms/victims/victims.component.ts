@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Enums, victim } from 'app/@core/models/incident';
 import { HttpService } from 'app/@core/service/http.service';
+import { UiService } from 'app/@core/service/ui.service';
 
 @Component({
   selector: 'ngx-victims',
@@ -17,7 +18,7 @@ export class VictimsComponent implements OnInit {
   victimprocessed: any=1;
   set:boolean=false;
   incidentid: any;
-  constructor(private http:HttpService,private router:ActivatedRoute) { }
+  constructor(private http:HttpService,private router:ActivatedRoute,private uiservice:UiService,private route:Router) { }
 
   ngOnInit(): void {
     this.router.params.subscribe(param=>{
@@ -46,7 +47,13 @@ register()
   else
   {
     console.log("wo");
-    this.http.addvictim(this.victim).subscribe(res=>{console.log(res)})
+    this.http.addvictim(this.victim).subscribe(res=>{
+      if(res==null)
+      {
+        this.uiservice.showToast("success","Record Added","Successfull");
+        this.route.navigateByUrl('pages/forms/inputs');
+      }
+    })
   }
 }
 }

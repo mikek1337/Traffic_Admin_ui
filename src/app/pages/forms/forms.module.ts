@@ -27,6 +27,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { VictimsComponent } from './victims/victims.component';
 import { DamageComponent } from './damage/damage.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 @NgModule({
   imports: [
     ThemeModule,
@@ -43,6 +44,7 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
     NbIconModule,
     ngFormsModule,
     LeafletModule,
+    Ng2SmartTableModule,
   ],
   declarations: [
     FormsComponent,

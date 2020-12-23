@@ -33,7 +33,7 @@ export class AssignTrafficComponent implements OnInit {
 
     zoom: 14,
     center: L.latLng({ lat: 8.9806, lng: 38.7578 }),
-    
+
   };
 
   index = 1;
@@ -46,7 +46,7 @@ export class AssignTrafficComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //this.options.center = this.latlng;  
+    //this.options.center = this.latlng;
     //console.log(this.incidents[0].locationDetail.split(","));
 
     this.activateroute.params.subscribe(p => {
@@ -74,7 +74,7 @@ export class AssignTrafficComponent implements OnInit {
 
   onmapready(map: L.Map) {
     this.map = map;
-    
+
     //this.pageData()
     console.log(this.incidents);
     this.activateroute.params.subscribe(p => {
@@ -85,7 +85,7 @@ export class AssignTrafficComponent implements OnInit {
       this.incidents = res;
       this.latlng = this.incidents[0].locatioDetail.split(",");
       this.incidentdate = this.incidents[0].incidentDate;
-      this.addincidentmarker(this.latlng, this.incidents[0].incidetType.replace("_", " "));
+      this.addincidentmarker(this.latlng, this.incidents[0].incidetTypeNavigation.description);
 
     })
     this.http.gettraffic().subscribe(res => {
@@ -122,7 +122,7 @@ export class AssignTrafficComponent implements OnInit {
       iconUrl: "assets/images/trafficicon.png"}));
     console.log(marker.togglePopup())
     marker.addTo(this.map);
-    
+
     marker.on("click", fn => {
       const partyn = marker.getPopup().getContent().toString();
       const splited = partyn.split(":");

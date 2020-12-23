@@ -20,6 +20,7 @@ export class ViewUserComponent implements OnInit {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      hide:true,
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
@@ -79,7 +80,7 @@ export class ViewUserComponent implements OnInit {
   {
     this.httpservice.getregisteredusers().subscribe(res=>{
       this.user = res;
-      
+
     })
   }
   delete(event)
@@ -97,7 +98,7 @@ export class ViewUserComponent implements OnInit {
           }
       });
       this.loaddata();
-      
+
     }
     else
     {
@@ -106,11 +107,11 @@ export class ViewUserComponent implements OnInit {
   }
   edit(event)
   {
-    
+
    if(window.confirm("Are you sure you want to enable user"))
    {
      console.log(event);
-     
+
     this.httpservice.disableuser(event.data.partyId,"PARTY_ENABLED").subscribe(res=>{
       console.log(res);
       if(res==null)
@@ -125,5 +126,5 @@ export class ViewUserComponent implements OnInit {
     this.ngOnInit();
    }
   }
-  
+
 }

@@ -33,7 +33,8 @@ options = {
 
   onmapready(map: L.Map) {
   	this.map = map;
-  	console.log(this.map)
+    console.log(this.map)
+    this.getlocation();
   	this.http.getinvestofficers().subscribe(res=>{
   		this.traffic = res;
   		for (const key in this.traffic) {
@@ -45,19 +46,19 @@ options = {
         this.addtrafficpolicemarker(this.latlng, name, id);
   		}
   	})
-  	this.getlocation();
+
 
   }
   getlocation()
   {
-  	
+
   	this.map.locate()
-  //	this.map.on('locationfound',(event)=>{
-  	//	this.location= event.latlng.lat +","+event.latlng.lng;
-  	//	console.log(this.location)
-  	//	const marker = L.marker(event.latlng)
-  	//	marker.addTo(this.map);
-  	//},)
+  	this.map.on('locationfound',(event)=>{
+  		this.location= event.latlng.lat +","+event.latlng.lng;
+  		console.log(this.location)
+  	const marker = L.marker(event.latlng)
+  		marker.addTo(this.map);
+  	},)
   }
 
   addtrafficpolicemarker(location: any, name: string, id: any) {

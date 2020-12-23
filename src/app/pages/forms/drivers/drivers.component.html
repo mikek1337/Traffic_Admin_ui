@@ -19,7 +19,7 @@
             </nb-select>
           </nb-card-body>
         <div class="full-name-inputs">
-          <input [(ngModel)]="driver.driverName" type="text" nbInput fullWidth placeholder="ስም">
+          <input [(ngModel)]="driver.party.partyName" type="text" nbInput fullWidth placeholder="ስም">
         </div>
         <div class="full-name-inputs">
           <input [(ngModel)]="driver.driverAge" type="number" nbInput fullWidth placeholder="ዕድሜ">
@@ -44,9 +44,9 @@
             </nb-select>
 
             <nb-card-header>ክ/ከተማ</nb-card-header>
-            <nb-select [(ngModel)]="driver.driverSubcity">
+            <nb-select [(ngModel)]="driver.party.subcity">
               <nb-option *ngFor="let subcity of subcitys" [value]="subcity.enumId">{{subcity.description}}</nb-option>
-              
+
             </nb-select>
 
           </nb-card-body>
