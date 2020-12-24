@@ -5,6 +5,9 @@ import { Enums,incident } from 'app/@core/models/incident';
 import { HttpService } from 'app/@core/service/http.service';
 import { StorageService } from 'app/@core/service/storage.service';
 import { UiService } from 'app/@core/service/ui.service';
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
+}
 
 @Component({
   selector: 'ngx-incident-form',
@@ -15,6 +18,9 @@ export class IncidentFormComponent implements OnInit {
   roadseparations: Enums;
   roadalis: Enums;
   partyid: string;
+  selectedFile: any;
+  lightconds: Enums;
+  imgurl: any
 
 
 
@@ -59,14 +65,23 @@ incidentdata= new incident()
     this.http.GetEnums("ROAD_ALIGNMENT").subscribe(res=>{
       this.roadalis = res
     })
+    this.http.GetEnums("LIGHT_CONDITION").subscribe(res=>{
+      this.lightconds=res
+    })
     this.partyid=this.storage.getLocalStorage("partyid")
 
   }
-  nextpage()
+  nextpage(image:any)
   {
-    this.incidentdata.partyId = this.partyid;
-    this.incidentdata.incidentDate = this.incidentdata.initialReportedTime;
-    this.http.addincident(this.incidentdata).subscribe(res=>{
+    const file: File = image.files[0]
+    const reader = new FileReader()
+    reader.addEventListener('load',(event:any)=>{
+      this.selectedFile = new ImageSnippet(event.target.result, file)
+      this.incidentdata.incidentPicture = this.selectedFile.file
+      console.log(this.incidentdata.incidentPicture)
+      this.incidentdata.partyId = this.partyid;
+      this.incidentdata.incidentDate = this.incidentdata.initialReportedTime;
+      this.http.addincident(this.incidentdata).subscribe(res=>{
       if(res!=null)
       {
         console.log(res);
@@ -74,18 +89,36 @@ incidentdata= new incident()
       }
     })  
     
+    })
+    reader.readAsDataURL(file);
+
+    
+  }
+  filechanged(event)
+  {
+    this.selectedFile = event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0])
+    reader.onload=(event2)=>{
+      this.imgurl=reader.result;
+      console.log(this.imgurl)
+      this.incidentdata.incidentPicture = this.imgurl.slice(22)
+    }
   }
   save()
   {
-    console.log(this.incidentdata);
-    this.incidentdata.partyId = this.partyid;
-    this.incidentdata.incidentDate = this.incidentdata.initialReportedTime;
-    this.http.addincident(this.incidentdata).subscribe(res=>{
-      if(res==null)
+       
+      //console.log(this.incidentdata.incidentPicture)
+      console.log(this.incidentdata);
+       this.incidentdata.partyId = this.partyid;
+       this.incidentdata.incidentDate = this.incidentdata.initialReportedTime;
+       this.http.addincident(this.incidentdata).subscribe(res=>{
+        if(res!=null)
       {
-        this.uiservice.showToast("primary","Repoted Successful","");
+        this.incidentdata=null;
+        this.uiservice.showToast("primary","በተሳካ ሁኔታ ሪፖርት ተደርጓል","");
       }
-    })    
+    })   
   }
 
 }

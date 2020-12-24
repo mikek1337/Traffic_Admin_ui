@@ -9,24 +9,24 @@
           </div>
           <div class="col-6">
             <ul type="none" class="detail">
-              <li>Party ID: {{incident.partyId}}</li>
-              <li>Incident Type: {{incident.incidetTypeNavigation.description}}</li>
-              <li>Incident Location: {{incident.locatioDetail}}</li>
-              <li>Weather Condition: {{incident.weatherConditionNavigation.description}}</li>
-              <li>Vehicles involved: {{incident.noOfVehicleInvolve}}</li>
+              <li>ID: {{incident.partyId}}</li>
+              <li>የአደጋ አይነት: {{incident.incidetTypeNavigation.description}}</li>
+              <li>የአደጋ ስፍራ: {{incident.locatioDetail}}</li>
+              <li>የአየር ሁኔታ: {{incident.weatherConditionNavigation.description}}</li>
+              <li>የተሳተፉ ተሽከርካሪዎች: {{incident.noOfVehicleInvolve}}</li>
             </ul>
           </div>
         </div>
 
-        <button nbButton disabled nbStepperNext class="btn1">prev</button>
-        <button nbButton nbStepperNext class="btn2">Approve</button>
+        <button nbButton disabled nbStepperNext class="btn1">ቀዳሚ</button>
+        <button nbButton nbStepperNext class="btn2">ማጽደቅ</button>
       </nb-step>
       <nb-step [label]="labelTwo">
         <ng-template #labelTwo>Final step</ng-template>
        
             <div leaflet [leafletOptions]="options" class="leaflet" (leafletMapReady)="onmapready($event)" (load)="map.invalidateSize(true)"></div>
           
-        <button nbButton nbStepperPrevious class="btn3">prev</button>
+        <button nbButton nbStepperPrevious class="btn3">ቀዳሚ</button>
         <button nbButton nbStepperNext class="btn4" (click)="assign()">Assign</button>
        
       </nb-step>

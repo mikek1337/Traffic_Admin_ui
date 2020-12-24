@@ -20,6 +20,7 @@ export class InformIncident
 
 export class incident
 {
+    incidentPicture:any;
     advice:any;
     damage:any;
     driver:any;
@@ -29,7 +30,6 @@ export class incident
     incidentCriticalLevel:string;
     incidentDate:Date;
     incidentId:any;
-    incidentPicture:any;
     incidentStatus:string;
     incidentSubcity:string;
     incidentType:string;
@@ -101,9 +101,9 @@ export class damage
 {
     damageId:string;
     damageType:string;
-    damageCatagory:string;
+    dmageCatagory:string;
     itemName:string;
-    price:any
+   // price:any
     incidentId;
 }
 export class victim

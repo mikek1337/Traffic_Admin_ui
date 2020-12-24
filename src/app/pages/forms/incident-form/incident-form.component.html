@@ -6,7 +6,7 @@
      <nb-card-header> <h3>እባኮ የተፈጠረውን የትራፊክ አደጋ መረጃ ያስገቡ</h3> </nb-card-header>
       <nb-card-body>
         <!-- <input type="text" nbInput fullWidth placeholder="Project"> -->
-        <input type="number" nbInput fullWidth placeholder=" የአደጋው መለያ ቁጥር">
+       <input #image nbInput fullWidth type="file" accept="image/*" placeholder="image" (change)="filechanged($event)">
         <h6 style="font-size: 15px;">የአደጋወን መነሻ ቀን እና ሰዓት ያስገቡ</h6><input [(ngModel)]="incidentdata.initialReportedTime" type="datetime-local" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
         <h6 style="font-size: 15px;">የአደጋውን መጨረሻ ምን ያክል እንደቆየ ቀኑን እና ሰዓት ያስገቡ</h6><input [(ngModel)]="incidentdata.endTime" type="datetime-local" nbInput fullWidth shape="rectangle" placeholder="የልደት ቀን">
            <nb-card-body>
@@ -75,20 +75,12 @@
               <nb-option value="2">ሌላ</nb-option>
             </nb-select> -->
 
-            <!-- <nb-card-header>ክ/ከተማ</nb-card-header>
-            <nb-select selected="1">
-              <nb-option value="1">አዲስ ከተማ</nb-option>
-              <nb-option value="2">አቃቂ ቃሊቲ</nb-option>
-              <nb-option value="3">አራዳ</nb-option>
-              <nb-option value="4">ቦሌ</nb-option>
-              <nb-option value="5">ጉለሌ</nb-option>
-              <nb-option value="6">ቂርቆስ</nb-option>
-              <nb-option value="7">ኮልፌ ቀራኒዮ</nb-option>
-              <nb-option value="8">ልደታ</nb-option>
-              <nb-option value="9">ንፋስ ስልክ ላፍቶ</nb-option>
-              <nb-option value="10">የካ</nb-option>
-            </nb-select> -->
+           <nb-card-header>የብርሃን ሁኔታ</nb-card-header>
+            <nb-select [(ngModel)]="incidentdata.lightCondition" selected="1">
+              <nb-option *ngFor="let light of lightconds"  [value]="light.enumId">{{light.description}}</nb-option>
+            </nb-select> 
 
+            <textarea [(ngModel)]="incidentdata.advice" nbInput fullWidth rows="15" placeholder="ምክር"></textarea>
             <!-- <nb-card-header>ቀበሌ</nb-card-header>
             <nb-select selected="1">
               <nb-option value="1">01</nb-option>
